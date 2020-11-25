@@ -18,11 +18,11 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ noreviewsfound: 'No Reviews found' }));
 });
 
-// @route GET api/reviews/:id
-// @description Get single review by id
+// @route GET api/reviews/:_id
+// @description Get single review by _id
 // @access Public
 router.get('/:id', (req, res) => {
-  Review.findById(req.params.id)
+  Review.findById(req.params._id)
     .then(review => res.json(review))
     .catch(err => res.status(404).json({ noreviewfound: 'No Review found' }));
 });
@@ -36,22 +36,22 @@ router.post('/', (req, res) => {
     .catch(err => res.status(400).json({ error: 'Unable to add this review' }));
 });
 
-// @route GET api/reviews/:id
+// @route GET api/reviews/:_id
 // @description Update review
 // @access Public
-router.put('/:id', (req, res) => {
-  Review.findByIdAndUpdate(req.params.id, req.body)
+router.put('/:_id', (req, res) => {
+  Review.findByIdAndUpdate(req.params._id, req.body)
     .then(review => res.json({ msg: 'Updated successfully' }))
     .catch(err =>
       res.status(400).json({ error: 'Unable to update the Database' })
     );
 });
 
-// @route GET api/reviews/:id
-// @description Delete review by id
+// @route GET api/reviews/:_id
+// @description Delete review by _id
 // @access Public
-router.delete('/:id', (req, res) => {
-  Review.findByIdAndRemove(req.params.id, req.body)
+router.delete('/:_id', (req, res) => {
+  Review.findByIdAndRemove(req.params._id, req.body)
     .then(review => res.json({ mgs: 'Review entry deleted successfully' }))
     .catch(err => res.status(404).json({ error: 'No such a review' }));
 });
