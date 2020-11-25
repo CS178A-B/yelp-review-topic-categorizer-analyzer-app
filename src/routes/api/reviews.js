@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // @route GET api/reviews/:_id
 // @description Get single review by _id
 // @access Public
-router.get('/:id', (req, res) => {
+router.get('/:_id', (req, res) => {
   Review.findById(req.params._id)
     .then(review => res.json(review))
     .catch(err => res.status(404).json({ noreviewfound: 'No Review found' }));
