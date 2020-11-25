@@ -1,13 +1,14 @@
 import json
 
-f = open('reviews.json')
+f = open('200reviews.json')
 
-with open('reviews.json') as f:
+with open('200reviews.json') as f:
     data = json.load(f)
 
-
+i = 1
 
 for data in data:
-    print(data['text'])
+    print(str(i) + ". " + data['text']).encode('utf-8')
+    i = i + 1
 
 f.close()
