@@ -24,13 +24,13 @@ const ReviewSchema = new mongoose.Schema({
   },
   funny: {
     type: Number
-  }
+  },
   cool: {
     type: Number
-  }
+  },
   text: {
     type: String
-  }
+  },
   date: {
     type: String
   }
