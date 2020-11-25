@@ -14,10 +14,12 @@ const ReviewSchema = new mongoose.Schema({
     required: true
   },
   business_id: {
-    type: String
+    type: String,
+    required: true
   },
   stars: {
-    type: Number
+    type: Number,
+    required: true
   },
   useful: {
     type: Number
@@ -29,7 +31,8 @@ const ReviewSchema = new mongoose.Schema({
     type: Number
   },
   text: {
-    type: String
+    type: String,
+    required: true
   },
   date: {
     type: String
