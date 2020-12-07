@@ -1,3 +1,5 @@
+# partial code snippets derived from Kan Nishida, errors corrected
+
 library(jsonlite)
 library(tibble)
 library(stringr)
