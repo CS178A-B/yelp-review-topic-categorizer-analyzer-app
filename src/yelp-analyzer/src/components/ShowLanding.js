@@ -50,7 +50,7 @@ updateInput = (event) => {
               {/* ADD SEARCH BAR AND BUTTON */}
               <SearchBar
                 input={searchValue}
-                onChange={updateInput}
+                onChange={updateInput} 
               />
             </div>
 
