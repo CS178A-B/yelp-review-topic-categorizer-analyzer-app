@@ -10,7 +10,6 @@ class ShowLanding extends Component {
     super(props);
     this.state = {
       reviews: [],
-      searchValue: '',
     };
   }
 
@@ -27,36 +26,28 @@ class ShowLanding extends Component {
       })
   };
 
-//   WRITE SEARCH HANDLER
-updateInput = (event) => {
-    console.log("Search handler triggered", event.target.value);
-    this.setState({
-        searchValue: event.target.value
-    })
-}
-
   render() {
 
     return (
-      <div className="ShowLanding">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <br />
-              <h2 className="display-4 text-center">Search</h2>
-            </div>
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Cover</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            <div>
-              {/* ADD SEARCH BAR AND BUTTON */}
-              <SearchBar
-                input={searchValue}
-                onChange={updateInput} 
-              />
-            </div>
-
-          </div>
-        </div>
-      </div>
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Yelp Restaurant Review Categorizer & Analyzer</h1>
+    <p class="lead">
+      <SearchBar/>
+    </p>
+  </main>
+</div>
     );
   }
 }
