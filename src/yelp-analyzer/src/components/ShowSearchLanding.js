@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import ReviewCard from './ReviewCard';
 
 class ShowSearchLanding extends Component {
   constructor(props) {
@@ -36,7 +34,7 @@ class ShowSearchLanding extends Component {
           <div className="row">
             <div className="col-md-12">
               <br />
-              <h2 className="display-4 text-center">Reviews List</h2>
+              <h2 className="display-4 text-center">Search</h2>
             </div>
 
             <div className="col-md-11">
