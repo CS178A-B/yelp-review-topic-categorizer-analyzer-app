@@ -1,6 +1,7 @@
 // LANDING PAGE WITH SEARCH BAR
 
 import React, { Component } from 'react';
+import SearchBar from './SearchBar'
 import '../App.css';
 import axios from 'axios';
 
@@ -27,7 +28,7 @@ class ShowLanding extends Component {
   };
 
 //   WRITE SEARCH HANDLER
-searchOnChange = (event) => {
+updateInput = (event) => {
     console.log("Search handler triggered", event.target.value);
     this.setState({
         searchValue: event.target.value
@@ -47,7 +48,10 @@ searchOnChange = (event) => {
 
             <div>
               {/* ADD SEARCH BAR AND BUTTON */}
-              <input type="text" value={this.props.searchValue} onChange={this.props.searchOnChange}/>
+              <SearchBar
+                input={searchValue}
+                onChange={updateInput}
+              />
             </div>
 
           </div>
