@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 
-class ShowSearchLanding extends Component {
+class ShowLanding extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class ShowSearchLanding extends Component {
         })
       })
       .catch(err =>{
-        console.log('Error from ShowSearchLanding');
+        console.log('Error from ShowLanding');
       })
   };
 
@@ -37,7 +37,7 @@ searchOnChange = (event) => {
   render() {
 
     return (
-      <div className="ShowSearchLanding">
+      <div className="ShowLanding">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -57,4 +57,4 @@ searchOnChange = (event) => {
   }
 }
 
-export default ShowSearchLanding;
+export default ShowLanding;
