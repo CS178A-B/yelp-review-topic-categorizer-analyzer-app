@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import CreateReview from './components/CreateReview';
-import ShowReviewList from './components/ShowReviewList';
+import ShowSearchLanding from './components/ShowSearchLanding';
 import ShowReviewDetails from './components/ShowReviewDetails';
 import UpdateReviewInfo from './components/UpdateReviewInfo';
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path='/' component={ShowReviewList} />
+          <Route exact path='/' component={ShowSearchLanding} />
           <Route path='/create-review' component={CreateReview} />
           <Route path='/edit-review/:id' component={UpdateReviewInfo} />
           <Route path='/show-review/:id' component={ShowReviewDetails} />

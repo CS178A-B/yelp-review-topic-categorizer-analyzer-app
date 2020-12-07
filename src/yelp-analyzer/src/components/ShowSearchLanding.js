@@ -8,7 +8,8 @@ class ShowSearchLanding extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [],
+      searchValue: '',
     };
   }
 
@@ -25,6 +26,13 @@ class ShowSearchLanding extends Component {
       })
   };
 
+//   WRITE SEARCH HANDLER
+searchOnChange = (event) => {
+    console.log("Search handler triggered", event.target.value);
+    this.setState({
+        searchValue: event.target.value
+    })
+}
 
   render() {
 
@@ -37,11 +45,9 @@ class ShowSearchLanding extends Component {
               <h2 className="display-4 text-center">Search</h2>
             </div>
 
-            <div className="col-md-11">
-              
-              <br />
-              <br />
-              <hr />
+            <div>
+              {/* ADD SEARCH BAR AND BUTTON */}
+              <input type="text" value={this.props.searchValue} onChange={this.props.searchOnChange}/>
             </div>
 
           </div>
@@ -51,4 +57,4 @@ class ShowSearchLanding extends Component {
   }
 }
 
-export default ShowReviewList;
+export default ShowSearchLanding;
