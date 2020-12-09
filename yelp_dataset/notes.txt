@@ -4,4 +4,4 @@ clean_business.R reduces yelp_academic_dataset_business.json to restaurants only
 
 clean_reviews.R takes chunks of 9 million records from yelp_academic_dataset_reviews.json and reduces to businesses only
 
-Ohio restaurants and reviews exported to MongoDB
+Ohio restaurants and reviews exported to MongoDB, created artificial data for category ratings
