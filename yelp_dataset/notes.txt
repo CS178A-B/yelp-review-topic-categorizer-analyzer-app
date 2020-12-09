@@ -1,1 +1,9 @@
 # Rproj file not present because code being developed in another workspace
+
+clean_business.R reduces yelp_academic_dataset_business.json to restaurants only
+
+clean_reviews.R takes chunks of 9 million records from yelp_academic_dataset_reviews.json and reduces to businesses only
+
+More cleaning to be done
+
+Insights: (1) Yelp dataset mostly contains reviews from Ontario (ON), Quebec (QC) and Arizona (AZ)
