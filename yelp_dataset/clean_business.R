@@ -30,10 +30,13 @@ restaurants_only <- yelp_tibble %>% select(-starts_with("hours"), -starts_with("
 
 restaurants_only %>% select(state) %>% count(unique(state))
 
-restaurants_only <- restaurants_only[ restaurants_only$state=="ON", ] %>% count(unique(state))
+ohio_restaurants <- restaurants_only[ restaurants_only$state=="OH", ]
+
+# print(object.size(arizona_restaurants), units="auto", standard = "SI")
+# write_json(ohio_restaurants, "ohio_restaurants.json")
 
 # df of restaurants only
-restaurant_id <- restaurants_only %>% select(business_id)
+restaurant_id <- ohio_restaurants %>% select(business_id)
 
 # list of categories
 categories <- temp_df %>% mutate(categories = as.character(categories)) %>% select(categories) %>%
