@@ -17,7 +17,14 @@ The Yelp Review Topic Categorizer and Analyzer does the following:
 
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum </a>
+<a href="https://github.com/giuseppi" target="_blank"><img src="https://github.com/giuseppi.png?size=40" align="left" height="30px">Giuseppi Pelayo </a>
+
+<a href="https://github.com/TimothyKool" target="_blank"><img src="https://github.com/TimothyKool.png?size=40" align="left" height="30px">Timothy Koo </a>
+
+<a href="https://github.com/dlscarmina" target="_blank"><img src="https://github.com/dlscarmina.png?size=40" align="left" height="30px">Mina delos Santos </a>
+
+<a href="https://github.com/andrewrchen05" target="_blank"><img src="https://github.com/andrewrchen05.png?size=40" align="left" height="30px">Andrew Chen </a>
+
 
 ## Usage
 Demo: <Link to youtube video>
