@@ -1,0 +1,32 @@
+{
+  "name": "yelp-review-analyzer",
+  "version": "1.0.0",
+  "description": "application that takes Yelp user reviews and determines empirical star ratings for dining experience categories",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CS178A-B/final-project-cool-team.git"
+  },
+  "author": "Andrew Chen, Giuseppi Pelayo, Mina delos Santos, Timothy Koo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CS178A-B/final-project-cool-team/issues"
+  },
+  "homepage": "https://github.com/CS178A-B/final-project-cool-team#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.16",
+    "validation": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

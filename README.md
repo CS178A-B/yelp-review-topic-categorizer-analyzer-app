@@ -1,4 +1,4 @@
-# CS178A-B-Template
+# Yelp Review Topic Categorizer and Analyzer
 
 ## Table of Contents
 - [Overview](#overview)
@@ -8,10 +8,23 @@
 - [Dependencies](#dependencies)
 
 ## Overview
-<Include project description?
+A business’s Yelp rating is based on a five star scale that is composed of an average of all user reviews on the business’s Yelp profile. This system gives users a quick and general overview of a business’s performance. However, this method poses a set of limitations. One limitation is how the numerical rating may not be indicative of the business’ actual quality. For example, a business might have a negative number review (1-5 star rating), but its text review might indicate that the service was good but the ambience gave the reviewer a negative experience. Another limitation comes from the user’s perspective in that Yelp does not accurately cater to the user’s query. For example, a user might look for a restaurant with a classy ambience, but Yelp’s results show all restaurants, even those that are not classy.
+
+The Yelp Review Topic Categorizer and Analyzer does the following:
+
+- Coming up with empirical analysis of Yelp reviews
+- Helps you choose which restaurants to eat at based on scores of different topics
+
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum </a>
+<a href="https://github.com/giuseppi" target="_blank"><img src="https://github.com/giuseppi.png?size=40" align="left" height="30px">Giuseppi Pelayo </a>
+
+<a href="https://github.com/TimothyKool" target="_blank"><img src="https://github.com/TimothyKool.png?size=40" align="left" height="30px">Timothy Koo </a>
+
+<a href="https://github.com/dlscarmina" target="_blank"><img src="https://github.com/dlscarmina.png?size=40" align="left" height="30px">Mina delos Santos </a>
+
+<a href="https://github.com/andrewrchen05" target="_blank"><img src="https://github.com/andrewrchen05.png?size=40" align="left" height="30px">Andrew Chen </a>
+
 
 ## Usage
 Demo: <Link to youtube video>
@@ -19,7 +32,7 @@ Demo: <Link to youtube video>
 <Screenshot of application>
 
 ## How To Run
-In the project directory, you can run:
+To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directory. To do so, go into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`. 
 
 ### `npm start`
 
@@ -56,10 +69,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Diagrams
 
-Sequence Diagram
+Sequence Diagrams
+
+![](images/SeqDiag1.png)
+![](images/SeqDiag2.png)
+
 
 Frontend Structure
-
 
 Overall System Diagram
 
