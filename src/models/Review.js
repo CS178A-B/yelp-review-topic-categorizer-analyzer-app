@@ -5,7 +5,7 @@ const ReviewSchema = new mongoose.Schema({
     type: ObjectId,
     required: true
   },
-  review_id: {
+  business_id: {
     type: String,
     required: true
   },
@@ -13,22 +13,9 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  business_id: {
-    type: String,
-    required: true
-  },
   stars: {
     type: Number,
     required: true
-  },
-  useful: {
-    type: Number
-  },
-  funny: {
-    type: Number
-  },
-  cool: {
-    type: Number
   },
   text: {
     type: String,
@@ -36,6 +23,18 @@ const ReviewSchema = new mongoose.Schema({
   },
   date: {
     type: String
+  },
+  ambience: {
+    type: Number
+  },
+  service: {
+    type: Number
+  },
+  health: {
+    type: Number
+  },
+  food: {
+    type: Number
   }
 });
 
