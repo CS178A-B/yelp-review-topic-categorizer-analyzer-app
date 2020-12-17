@@ -32,7 +32,11 @@ Demo: <Link to youtube video>
 <Screenshot of application>
 
 ## How To Run
-To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directory. To do so, go into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`. 
+To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directory. To do so, go into src -> yelp_analyzer -> src.
+
+### `npm install`
+
+Installs node package dependencies for this project. (Dependencies may be found in package.json file)
 
 ### `npm start`
 
