@@ -102,6 +102,12 @@ The application begins with the Yelp Review Dataset which contains reviews for r
 
 ## Dependencies
 
-Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
+Install [Node Package Manager](https://www.npmjs.com/get-npm)
 
-Install Express CORS. [Helpful Documentation](https://expressjs.com/en/resources/middleware/cors.html)
+Install [Express](https://expressjs.com/en/resources/middleware/cors.html)
+
+Install `body-parser`, which allows us to get data throughout the requet
+
+Install `mongoose`, which connects/interacts with MongoDB
+
+Install `validation`, which is used for validation
