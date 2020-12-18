@@ -29,7 +29,7 @@ The Yelp Review Topic Categorizer and Analyzer does the following:
 
 
 ## Usage
-Demo: <Link to youtube video>
+Demo: https://youtu.be/dsYeiRCCzcc
 
 <Screenshot of application>
 
