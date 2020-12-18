@@ -101,5 +101,7 @@ The front-end begins with a landing page with just one search bar where users ca
 The application begins with the Yelp Review Dataset which contains reviews for restaurants. These reviews go into a database to be cleaned and formatted for data analysis. A small set of these reviews are categorized manually, identifying which categories (food, service, ambience, health/safety) are relevant to the review. The cleaned data and the training model enters Google Cloud’s AutoML Natural Language where it categorizes all of the reviews and uses sentiment analysis to determine the holistic rating for each category per restaurant. 
 
 ## Dependencies
+
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
+
 Install Express CORS. [Helpful Documentation](https://expressjs.com/en/resources/middleware/cors.html)
