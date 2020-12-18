@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import ShowLanding from './components/ShowLanding';
-import ShowRestaurantList from './components/ShowRestaurantList';
+// import ShowRestaurantList from './components/ShowRestaurantList';
 import ShowReviewDetails from './components/ShowReviewDetails';
 import UpdateReviewInfo from './components/UpdateReviewInfo';
 

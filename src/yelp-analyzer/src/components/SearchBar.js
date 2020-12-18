@@ -26,7 +26,7 @@ class SearchBar extends Component {
       .get('http://localhost:8082/api/reviews/'+this.state.query)
       .then(res => {
         this.setState({
-          results: res.data
+          results: res.data,
         })
       })
       .catch(err => {
@@ -34,7 +34,9 @@ class SearchBar extends Component {
       })
   };
   
+  
   render() {
+    
     const restaurants = this.state.results;
     const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
     let restaurantList;
@@ -63,30 +65,7 @@ class SearchBar extends Component {
               name="searchButton"
             />
         </form>
-        <div className="ShowReviewList">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <br />
-                <h2 className="display-4 text-center">Restaurant List</h2>
-              </div>
-
-              <div className="col-md-11">
-                {/* <Link to="/create-review" className="btn btn-outline-warning float-right">
-                  + Add New Review
-                </Link>
-                <br />
-                <br />
-                <hr /> */}
-              </div>
-
-            </div>
-
-            <div className="list">
-                  {restaurantList}
-            </div>
-          </div>
-        </div>
+        
       </div>
     );
   }
