@@ -15,14 +15,12 @@ footer {
 .landing-components-main {
   position: relative;
   height: 50vh;
-  display: flex;
-  justify-content: center;
 }
 
 .landing-components {
   position: absolute;
   top: 50%;
-  width: 70vw;
+  width: 80vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -30,29 +28,44 @@ footer {
 .landing-heading {
   font-size: 4em;
   font-weight: 900;
-  
   color: #333333;
   -webkit-text-stroke: 3px #FFFFFF;
 }
 
+.search {
+}
+
 .search input {
-  width: 80% !important;
+  width: 90% !important;
 }
 
 .search button {
   width: 50px !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+  .landing-components-main {
+    position: relative;
+    height: 50vh;
+  }
+
   .landing-components {
     width: 90vw;
   }
   
   .landing-heading {
-    font-size: 2em;
+    font-size: 4vmax;
     font-weight: 900;
     -webkit-text-stroke: 1.25px #FFFFFF;
   }
-  
-  
+
+  .search input {
+    width: 75% !important;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .landing-components-main {
+    height: 20vh;
+  }
 }
