@@ -2,14 +2,6 @@ const mongoose = require('mongoose');
 
 const ReviewSchema = new mongoose.Schema({
   _id: {
-    type: ObjectId,
-    required: true
-  },
-  review_id: {
-    type: String,
-    required: true
-  },
-  user_id: {
     type: String,
     required: true
   },
@@ -17,18 +9,13 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  user_id: {
+    type: String,
+    required: true
+  },
   stars: {
     type: Number,
     required: true
-  },
-  useful: {
-    type: Number
-  },
-  funny: {
-    type: Number
-  },
-  cool: {
-    type: Number
   },
   text: {
     type: String,
@@ -36,6 +23,18 @@ const ReviewSchema = new mongoose.Schema({
   },
   date: {
     type: String
+  },
+  ambience: {
+    type: Number
+  },
+  service: {
+    type: Number
+  },
+  health: {
+    type: Number
+  },
+  food: {
+    type: Number
   }
 });
 
