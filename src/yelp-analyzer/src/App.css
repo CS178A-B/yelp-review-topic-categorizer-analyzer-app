@@ -7,15 +7,52 @@ footer {
 
 .landing {
   background-image: url('./assets/LANDING.jpg');
-  background-size: auto 100vh;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
 }
 
+.landing-components-main {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-components {
+  position: absolute;
+  top: 50%;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .landing-heading {
-  outline: #ffffff;
+  font-size: 4em;
+  font-weight: 900;
+  
+  color: #333333;
+  -webkit-text-stroke: 3px #FFFFFF;
 }
 
-.search-bar {
-  width: 90% !important;
+.search input {
+  width: 80% !important;
 }
 
+.search button {
+  width: 50px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing-components {
+    width: 90vw;
+  }
+  
+  .landing-heading {
+    font-size: 2em;
+    font-weight: 900;
+    -webkit-text-stroke: 1.25px #FFFFFF;
+  }
+  
+  
+}

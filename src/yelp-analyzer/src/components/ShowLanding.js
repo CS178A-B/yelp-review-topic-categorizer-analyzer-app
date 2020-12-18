@@ -35,9 +35,13 @@ class ShowLanding extends Component {
         <NavBar/>
 
         <main role="main" class="container">
-          <h1 className="landing-heading">restaurant review <br/> topic categorizer & analyzer</h1>
-          <br/>
-          <SearchBar/>
+          <div class="landing-components-main">
+          <div class="landing-components">
+            <h1 className="cover-heading" class="landing-heading">restaurant review <br/> topic categorizer & analyzer</h1>
+            <br/>
+            <SearchBar/>
+          </div>
+          </div>
         </main>
 
       </div>

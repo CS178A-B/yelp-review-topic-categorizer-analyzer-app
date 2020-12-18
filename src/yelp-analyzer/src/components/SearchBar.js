@@ -51,7 +51,7 @@ class SearchBar extends Component {
 
     return (
       <div>
-        <form noValidate onSubmit={this.onSubmit} class="form-inline">
+        <form noValidate onSubmit={this.onSubmit} class="form-inline search">
             <input
               type="text"
               style={BarStyling}
@@ -59,7 +59,7 @@ class SearchBar extends Component {
               name={"query"}
               value={this.state.query}
               onChange={this.onChange}
-              class="form-control mr-sm-2 search-bar"
+              class="form-control mr-sm-2"
             />
             <button type="submit" name="searchButton" class="btn btn-danger my-2 my-sm-0"> 🔎 </button>
         </form>
