@@ -45,7 +45,6 @@ footer {
 
 @media only screen and (max-width: 800px) {
   .landing-components-main {
-    position: relative;
     height: 50vh;
   }
 
@@ -55,7 +54,6 @@ footer {
   
   .landing-heading {
     font-size: 4vmax;
-    font-weight: 900;
     -webkit-text-stroke: 1.25px #FFFFFF;
   }
 
@@ -67,5 +65,10 @@ footer {
 @media only screen and (max-height: 400px) {
   .landing-components-main {
     height: 20vh;
+  }
+
+  .landing-heading {
+    font-size: 4vmax;
+    -webkit-text-stroke: 1.25px #FFFFFF;
   }
 }
