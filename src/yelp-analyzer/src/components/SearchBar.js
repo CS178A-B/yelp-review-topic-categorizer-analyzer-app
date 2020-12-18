@@ -8,7 +8,8 @@ class SearchBar extends Component {
   constructor() {
     super();
     this.state = {
-      query: []
+      query: '',
+      results: []
     };
   }
 
@@ -19,15 +20,13 @@ class SearchBar extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const data = {
-      query: this.state.query
-    };
+    this.setState({query: e.target.query});
 
     axios
-      .get('http://localhost:8082/api/reviews/search', data)
+      .get('http://localhost:8082/api/reviews/'+this.state.query)
       .then(res => {
         this.setState({
-          query: res.data
+          results: res.data
         })
       })
       .catch(err => {
@@ -36,7 +35,7 @@ class SearchBar extends Component {
   };
   
   render() {
-    const restaurants = this.state.query;
+    const restaurants = this.state.results;
     const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
     let restaurantList;
 
@@ -55,8 +54,8 @@ class SearchBar extends Component {
             type="text"
             style={BarStyling}
             placeholder={"search restaurant, cuisine, or location"}
-            name={"searchInput"}
-            value={this.state.title}
+            name={"query"}
+            value={this.state.query}
             onChange={this.onChange}
             />
             <button
