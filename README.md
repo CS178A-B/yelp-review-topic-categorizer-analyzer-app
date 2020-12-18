@@ -34,7 +34,7 @@ Demo: <Link to youtube video>
 ## How To Run
 To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directories to run both the client and server side.
 
-To run the client side in one terminal, change directories into src -> yelp_analyzer. After that, run `npm install` (if you don't have it already), then run `npm start`.
+To run the client side in one terminal, change directories into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`.
 
 To run the server side in another terminal, change directories into src. After that, run `npm install cors` (if you receive the error _Error: Cannot find module 'cors'_), then run `node app.js`.
 
