@@ -51,19 +51,17 @@ class SearchBar extends Component {
 
     return (
       <div>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.onSubmit} class="form-inline">
             <input
-            type="text"
-            style={BarStyling}
-            placeholder={"search restaurant, cuisine, or location"}
-            name={"query"}
-            value={this.state.query}
-            onChange={this.onChange}
+              type="text"
+              style={BarStyling}
+              placeholder={"search restaurant, cuisine, or location"}
+              name={"query"}
+              value={this.state.query}
+              onChange={this.onChange}
+              class="form-control mr-sm-2 search-bar"
             />
-            <button
-              type="submit"
-              name="searchButton"
-            />
+            <button type="submit" name="searchButton" class="btn btn-danger my-2 my-sm-0"> 🔎 </button>
         </form>
         
       </div>
