@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ReviewSchema = new mongoose.Schema({
   _id: {
-    type: ObjectId,
+    type: String,
     required: true
   },
   business_id: {

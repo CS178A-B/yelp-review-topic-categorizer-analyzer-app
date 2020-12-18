@@ -3,6 +3,7 @@ const router = express.Router();
 
 // Load Review model
 const Review = require('../../models/Review');
+const Business = require('../../models/Business');
 
 // @route GET api/reviews/test
 // @description tests reviews route
@@ -16,6 +17,19 @@ router.get('/', (req, res) => {
   Review.find()
     .then(reviews => res.json(reviews))
     .catch(err => res.status(404).json({ noreviewsfound: 'No Reviews found' }));
+});
+
+router.get('/search', (req, res) => {
+  // Business.find({
+  //   "categories": {"$regex": req.body, "$options": "i"}
+  // }, function(err, foundItems){
+  //   res.render("ShowLanding", {listOfRestaurants: foundItems});
+  // }).then(restaurant => res.json(restaurant))
+  // .catch(err => res.status(404).json({ noreviewfound: 'No Review found' }));
+  console.log(req.body);
+  Review.find(req.body)
+    .then(restaurant => res.json(restaurant))
+    .catch(err => res.status(404).json({ noreviewfound: 'No Review found' }));
 });
 
 // @route GET api/reviews/:_id
