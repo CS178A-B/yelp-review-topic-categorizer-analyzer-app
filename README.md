@@ -92,4 +92,4 @@ Overall System Diagram
 
 ## Dependencies
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
-
+Install Express CORS. [Helpful Documentation](https://expressjs.com/en/resources/middleware/cors.html)
