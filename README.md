@@ -1,5 +1,7 @@
 # Yelp Review Topic Categorizer and Analyzer
 
+![](images/prototype.jpg)
+
 ## Table of Contents
 - [Overview](#overview)
 - [Usage](#usage)
@@ -27,20 +29,36 @@ The Yelp Review Topic Categorizer and Analyzer does the following:
 
 
 ## Usage
-Demo: <Link to youtube video>
+Demo: https://youtu.be/dsYeiRCCzcc
 
 <Screenshot of application>
 
 ## How To Run
-To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directory. To do so, go into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`. 
+
+To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directories to run both the client and server side.
+
+To run the client side in one terminal, change directories into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`.
+
+To run the server side in another terminal, change directories into src. After that, run `npm install cors` (if you receive the error _Error: Cannot find module 'cors'_), then run `node app.js`.
+
+### `npm install`
+
+Installs node package dependencies for this project. (Dependencies may be found in package.json file)
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the client in the development mode.<br />
+This automatically opens [http://localhost:3000](http://localhost:3000) in your browser, where you can view the app.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `node app.js`
+
+Runs the server connected to the database.<br />
+This connects the client side of the app to the server and database, enabling any functions on the server side to run accordingly.
+
+You will also see any node errors in the console.
 
 ### `npm test`
 
@@ -69,16 +87,32 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Diagrams
 
-Sequence Diagrams
+### Sequence Diagrams
 
-![](images/SeqDiag1.png)
-![](images/SeqDiag2.png)
+![](images/SeqDiag1.png)<br />
+Shown here is one of our sequence diagrams and an example of how our quintessential user, the Foodie, would interact with our service. The overview of this sequence diagram is how a Foodie requests the rank of restaurants based on a specific category, e.g ambience. To see how the front-end components look when the above application logic is triggered, see Section 4b of this document under “Results with search criteria.”
 
+![](images/SeqDiag2.png)<br />
+Shown here is the Foodie interacting with our application, requesting the map view, as shown above. See below in section 4b under “Results with map view” to see how the front-end looks when you request the map. Our database includes the coordinates of different restaurants so that we can populate a map with location icons.
 
-Frontend Structure
+### Frontend Structure
 
-Overall System Diagram
+![](images/HiFiPrototype.gif)<br />
+The front-end begins with a landing page with just one search bar where users can type either locations, restaurants, or cuisines. The search backend determines whether the user is identifying either a location, restaurant, or cuisine and gathers the information for the relevant query from the analyzed database. This analyzed database is then displayed in a list which can be sorted by descending star ratings for specific categories. Users can also search on the same page though the search bar above the list.
+
+### Overall System Diagram
+
+![](images/OverallSystemDiagram.png)<br />
+The application begins with the Yelp Review Dataset which contains reviews for restaurants. These reviews go into a database to be cleaned and formatted for data analysis. A small set of these reviews are categorized manually, identifying which categories (food, service, ambience, health/safety) are relevant to the review. The cleaned data and the training model enters Google Cloud’s AutoML Natural Language where it categorizes all of the reviews and uses sentiment analysis to determine the holistic rating for each category per restaurant. 
 
 ## Dependencies
-Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
 
+Install [Node Package Manager](https://www.npmjs.com/get-npm)
+
+Install [Express](https://expressjs.com/en/resources/middleware/cors.html)
+
+Install `body-parser`, which allows us to get data throughout the requet
+
+Install `mongoose`, which connects/interacts with MongoDB
+
+Install `validation`, which is used for validation
