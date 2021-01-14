@@ -17,17 +17,18 @@ class SearchBar extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
+  onSubmit = async e => {
     e.preventDefault();
 
     this.setState({query: e.target.query});
 
-    axios
+    await axios
       .get('http://localhost:8082/api/reviews/'+this.state.query)
       .then(res => {
         this.setState({
           results: res.data
         })
+        console.log(res);
       })
       .catch(err => {
         console.log("Error in SearchBar!");
