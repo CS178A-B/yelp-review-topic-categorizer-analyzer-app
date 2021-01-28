@@ -1,1 +1,1 @@
-web: node /src/yelp-analyzer/src/app.js
+web: npm start --prefix ./src/yelp-analyzer/
