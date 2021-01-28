@@ -1,0 +1,1 @@
+web: node /src/yelp-analyzer/src/app.js
