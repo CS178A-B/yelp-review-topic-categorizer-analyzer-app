@@ -64,7 +64,6 @@ class SearchBar extends Component {
             />
             <button type="submit" name="searchButton" class="btn btn-danger my-2 my-sm-0"> 🔎 </button>
         </form>
-        
       </div>
     );
   }

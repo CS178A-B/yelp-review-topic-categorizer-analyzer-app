@@ -31,19 +31,16 @@ class ShowLanding extends Component {
 
     return (
       <div class = "landing">
-      
         <NavBar/>
-
         <main role="main" class="container">
           <div class="landing-components-main">
-          <div class="landing-components">
-            <h1 className="cover-heading" class="landing-heading">restaurant review <br/> topic categorizer & analyzer</h1>
-            <br/>
-            <SearchBar/>
-          </div>
+            <div class="landing-components">
+              <h1 className="cover-heading" class="landing-heading">restaurant review <br/> topic categorizer & analyzer</h1>
+              <br/>
+              <SearchBar/>
+            </div>
           </div>
         </main>
-
       </div>
     );
   }
