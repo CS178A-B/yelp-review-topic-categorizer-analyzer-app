@@ -8,11 +8,12 @@ const router = express.Router();
 // @route GET api/reviews/test
 // @description tests reviews route
 // @access Public
-router.get('/test', (req, res) => res.send('review route testing!'));
+// router.get('/test', (req, res) => res.send('review route testing!'));
 
 // @route GET api/reviews
 // @description Get all reviews
 // @access Public
+
 // router.get('/', (req, res) => {
 //   Review.find()
 //     .then(reviews => res.json(reviews))

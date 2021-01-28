@@ -26,7 +26,7 @@ class SearchBar extends Component {
       .get('http://localhost:8082/api/reviews/'+this.state.query)
       .then(res => {
         this.setState({
-          results: res.data
+          results: res.data,
         })
         console.log(res);
       })
@@ -35,7 +35,9 @@ class SearchBar extends Component {
       })
   };
   
+  
   render() {
+    
     const restaurants = this.state.results;
     const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
     let restaurantList;
@@ -50,44 +52,19 @@ class SearchBar extends Component {
 
     return (
       <div>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.onSubmit} class="form-inline search">
             <input
-            type="text"
-            style={BarStyling}
-            placeholder={"search restaurant, cuisine, or location"}
-            name={"query"}
-            value={this.state.query}
-            onChange={this.onChange}
+              type="text"
+              style={BarStyling}
+              placeholder={"search restaurant, cuisine, or location"}
+              name={"query"}
+              value={this.state.query}
+              onChange={this.onChange}
+              class="form-control mr-sm-2"
             />
-            <button
-              type="submit"
-              name="searchButton"
-            />
+            <button type="submit" name="searchButton" class="btn btn-danger my-2 my-sm-0"> 🔎 </button>
         </form>
-        <div className="ShowReviewList">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <br />
-                <h2 className="display-4 text-center">Restaurant List</h2>
-              </div>
-
-              <div className="col-md-11">
-                {/* <Link to="/create-review" className="btn btn-outline-warning float-right">
-                  + Add New Review
-                </Link>
-                <br />
-                <br />
-                <hr /> */}
-              </div>
-
-            </div>
-
-            <div className="list">
-                  {restaurantList}
-            </div>
-          </div>
-        </div>
+        
       </div>
     );
   }
