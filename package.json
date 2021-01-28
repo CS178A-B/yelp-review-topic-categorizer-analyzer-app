@@ -15,7 +15,8 @@
   "author": "Andrew Chen, Giuseppi Pelayo, Mina delos Santos, Timothy Koo",
   "license": "ISC",
   "engine": {
-    "node": "12.18.0"
+    "node": "12.18.0",
+    "npm": "6.14.11"
   },
   "bugs": {
     "url": "https://github.com/CS178A-B/final-project-cool-team/issues"
