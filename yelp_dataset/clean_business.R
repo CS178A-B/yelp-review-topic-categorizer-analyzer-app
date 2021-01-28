@@ -39,7 +39,7 @@ ohio_restaurants <- restaurants_only[ restaurants_only$state=="OH", ]
 restaurant_id <- ohio_restaurants %>% select(business_id)
 
 # list of categories
-categories <- temp_df %>% mutate(categories = as.character(categories)) %>% select(categories) %>%
+categories <- ohio_restaurants %>% mutate(categories = as.character(categories)) %>% select(categories) %>%
   mutate(categories1 = stringr::str_split(categories, ",")) %>% unnest(categories1) %>% select(categories1)
 
 
@@ -49,7 +49,7 @@ categories <- categories[!duplicated(categories$categories1),]
 
 
 # Estimate memory size, note that MongoDB cluster is limited
-print(object.size(temp_df), units="auto", standard = "SI")
+print(object.size(ohio_restaurants), units="auto", standard = "SI")
 
 
 

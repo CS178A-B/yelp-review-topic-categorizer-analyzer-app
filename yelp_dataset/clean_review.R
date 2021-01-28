@@ -64,8 +64,17 @@ repeat {
 
 write_json(all_reviews_df, "ohio_reviews.json")
 
+# Get rid of health column
+all_reviews_df = subset(all_reviews_df, select = -c(health))
+
+all_reviews_df$food <- ""
+all_reviews_df$ambience <- ""
+all_reviews_df$service <- ""
+
+# Use csv for gcloud
+write.csv(all_reviews_df, "ohio_reviews.csv")
+
 # export reviews for labeling
 # data.frame( yelp_restaurantrev[c(1:50), c("text") ] )
-
 
 
