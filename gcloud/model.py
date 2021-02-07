@@ -1,32 +1,37 @@
-from google.cloud import automl
+# import nlp
+from automl import *
+import csv
+# import nltk.data
+import pandas as pd
+from sentence import split_sentences
 
-# TODO(developer): Uncomment and set the following variables
-project_id = ""
-model_id = ""
-content = ""
 
-prediction_client = automl.PredictionServiceClient()
+class review:
+    def __init__(self, num, business_id, user_id, stars, text, date):
+        self.num = num
+        self.business_id = business_id
+        self.user_id = user_id
+        self.stars = stars
+        self.text = text
+        self.date = date
+        
 
-# Get the full path of the model.
-model_full_id = automl.AutoMlClient.model_path(
-    project_id, "us-central1", model_id
-)
+#with open('final.csv', mode='w') as final_file:
+#    labeleddata = csv.writer(final_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)    
+        
+with open('new_york_reviews_three.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    line_count = 0
 
-# Supported mime_types: 'text/plain', 'text/html'
-# https://cloud.google.com/automl/docs/reference/rpc/google.cloud.automl.v1#textsnippet
-text_snippet = automl.TextSnippet(
-    content=content, mime_type="text/plain"
-)
-payload = automl.ExamplePayload(text_snippet=text_snippet)
+    for row in csv_reader:
+        # print (row[4])
+        temp_sentence_list = split_sentences(row[4]) # column 4 = text review
+        
+        for sentence in temp_sentence_list:
+            # predict(sentence)
+        
+        line_count += 1
 
-response = prediction_client.predict(name=model_full_id, payload=payload)
+        # split sentence
 
-for annotation_payload in response.payload:
-    print(
-        u"Predicted class name: {}".format(annotation_payload.display_name)
-    )
-    print(
-        u"Predicted class score: {}".format(
-            annotation_payload.classification.score
-        )
-    )
+        
