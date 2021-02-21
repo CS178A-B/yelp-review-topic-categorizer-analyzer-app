@@ -1,4 +1,0 @@
-{
-    "mongoURI":
-        "mongodb+srv://tcUser:teamcool@sandbox.e0ybu.mongodb.net/yelp_data?retryWrites=true&w=majority"
-}
