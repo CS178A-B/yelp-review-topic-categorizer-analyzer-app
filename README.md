@@ -37,9 +37,9 @@ Demo: https://youtu.be/dsYeiRCCzcc
 
 To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directories to run both the client and server side.
 
-To run the client side in one terminal, change directories into src -> yelp_analyzer -> src. After that, run `npm install` (if you don't have it already), then run `npm start`.
+To run the client side in one terminal, change directories into **client**. After that, run `npm install`, then run `npm start`.
 
-To run the server side in another terminal, change directories into src. After that, run `npm install cors` (if you receive the error _Error: Cannot find module 'cors'_), then run `node app.js`.
+To run the server side in another terminal, change directories into **server**. After that, run `npm install`, then run `npm start`.
 
 ### `npm install`
 
@@ -47,18 +47,11 @@ Installs node package dependencies for this project. (Dependencies may be found 
 
 ### `npm start`
 
-Runs the client in the development mode.<br />
+Runs the client and server in the development mode.<br />
 This automatically opens [http://localhost:3000](http://localhost:3000) in your browser, where you can view the app.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `node app.js`
-
-Runs the server connected to the database.<br />
-This connects the client side of the app to the server and database, enabling any functions on the server side to run accordingly.
-
-You will also see any node errors in the console.
 
 ### `npm test`
 
