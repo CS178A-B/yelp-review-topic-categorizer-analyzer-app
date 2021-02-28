@@ -1,6 +1,9 @@
 import React from 'react';
 
 const SearchBar = () => (
+    <div style={{
+        backgroundImage: '../../public/restaurantinside.png'
+    }}>
     <form action="/" method="get">
         <label htmlFor="header-search">
         </label>
@@ -12,6 +15,7 @@ const SearchBar = () => (
         />
         <button type="submit">Search</button>
     </form>
+    </div>
 );
 
 
