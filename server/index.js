@@ -12,11 +12,11 @@ app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-app.use('/restaurant', restaurantRoutes);
+app.use('/restaurants', restaurantRoutes);
 
-app.get('/', (req, res) => {
-    res.send('Hello from Team Cool Senior Design API');
-});
+// app.get('/', (req, res) => {
+//     res.send('Hello from Team Cool Senior Design API');
+// });
 
 const PORT = process.env.PORT || 5000;
 
