@@ -1,0 +1,42 @@
+{
+  "engineName": "review-engine",
+  "endpointBase": "https://a176897abefc4b55bb2009439ba4da2b.ent-search.us-west-1.aws.cloud.es.io",
+  "searchKey": "search-moz1i46atwst63excwvc9xki",
+  "resultFields": [
+    "address",
+    "city",
+    "latitude",
+    "description",
+    "stars",
+    "title",
+    "nps_link",
+    "food",
+    "states",
+    "visitors",
+    "square_km",
+    "world_heritage_site",
+    "date_established",
+    "ambience",
+    "service",
+    "name",
+    "location",
+    "acres",
+    "state",
+    "categories",
+    "postal_code",
+    "business_id",
+    "longitude",
+    "id"
+  ],
+  "sortFields": [
+    "stars",
+    "food",
+    "ambience",
+    "service"
+  ],
+  "facets": [
+    "categories"
+  ],
+  "titleField": "name",
+  "urlField": "description"
+}
