@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js';
+import restaurantRoutes from './routes/restaurant.js';
 
 const app = express();
 dotenv.config();
@@ -12,7 +12,7 @@ app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-app.use('/posts', postRoutes);
+app.use('/restaurant', restaurantRoutes);
 
 app.get('/', (req, res) => {
     res.send('Hello from Team Cool Senior Design API');
