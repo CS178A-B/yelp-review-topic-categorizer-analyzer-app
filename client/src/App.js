@@ -28,6 +28,8 @@ getConfig,
 getFacetFields
 } from "./config/config-helper";
 
+import { getPosts } from './actions/posts';
+
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
 searchKey,
@@ -45,7 +47,6 @@ apiConnector: connector,
 alwaysSearchOnInitialLoad: true
 };
 
-import { getPosts } from './actions/posts';
 
 const App = () => {
     const dispatch = useDispatch();
