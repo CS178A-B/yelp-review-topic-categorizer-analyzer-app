@@ -1,62 +1,65 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-// import Search from './components/Search.js';
+import RestaurantPage from './components/RestaurantPage.js';
+import Search from './components/Search.js';
 
-import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
+// import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
-import {
-    ErrorBoundary,
-    Facet,
-    SearchProvider,
-    SearchBox,
-    Results,
-    PagingInfo,
-    ResultsPerPage,
-    Paging,
-    Sorting,
-    WithSearch
-  } from "@elastic/react-search-ui";
-import { Layout } from "@elastic/react-search-ui-views";
-import "@elastic/react-search-ui-views/lib/styles/styles.css";
+// import {
+//     ErrorBoundary,
+//     Facet,
+//     SearchProvider,
+//     SearchBox,
+//     Results,
+//     PagingInfo,
+//     ResultsPerPage,
+//     Paging,
+//     Sorting,
+//     WithSearch
+//   } from "@elastic/react-search-ui";
+// import { Layout } from "@elastic/react-search-ui-views";
+// import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
-import {
-    buildAutocompleteQueryConfig,
-    buildFacetConfigFromConfig,
-    buildSearchOptionsFromConfig,
-    buildSortOptionsFromConfig,
-    getConfig,
-    getFacetFields
-} from "./config/config-helper";
+// import {
+//     buildAutocompleteQueryConfig,
+//     buildFacetConfigFromConfig,
+//     buildSearchOptionsFromConfig,
+//     buildSortOptionsFromConfig,
+//     getConfig,
+//     getFacetFields
+// } from "./config/config-helper";
 
-import { getPosts } from './actions/posts';
+// import { getPosts } from './actions/posts';
 
-const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
-const connector = new AppSearchAPIConnector({
-searchKey,
-engineName,
-hostIdentifier,
-endpointBase
-});
-const config = {
-searchQuery: {
-    facets: buildFacetConfigFromConfig(),
-    ...buildSearchOptionsFromConfig()
-},
-autocompleteQuery: buildAutocompleteQueryConfig(),
-apiConnector: connector,
-alwaysSearchOnInitialLoad: true
-};
+// const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
+// const connector = new AppSearchAPIConnector({
+// searchKey,
+// engineName,
+// hostIdentifier,
+// endpointBase
+// });
+// const config = {
+// searchQuery: {
+//     facets: buildFacetConfigFromConfig(),
+//     ...buildSearchOptionsFromConfig()
+// },
+// autocompleteQuery: buildAutocompleteQueryConfig(),
+// apiConnector: connector,
+// alwaysSearchOnInitialLoad: true
+// };
 
 const App = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getPosts());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getPosts());
+    // }, [dispatch]);
 
     return (
         <div>
-            <SearchProvider config={config}>
+            <RestaurantPage/>
+            {/* <Search/> */}
+            {/* <SearchProvider config={config}>
                 <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                     {({ wasSearched }) => {
                     return (
@@ -97,7 +100,7 @@ const App = () => {
                     );
                     }}
                 </WithSearch>
-            </SearchProvider>
+            </SearchProvider> */}
         </div>
     );
 }
