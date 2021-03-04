@@ -20,13 +20,15 @@ import { Layout } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 import {
-buildAutocompleteQueryConfig,
-buildFacetConfigFromConfig,
-buildSearchOptionsFromConfig,
-buildSortOptionsFromConfig,
-getConfig,
-getFacetFields
+    buildAutocompleteQueryConfig,
+    buildFacetConfigFromConfig,
+    buildSearchOptionsFromConfig,
+    buildSortOptionsFromConfig,
+    getConfig,
+    getFacetFields
 } from "./config/config-helper";
+
+import { getPosts } from './actions/posts';
 
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
@@ -44,8 +46,6 @@ autocompleteQuery: buildAutocompleteQueryConfig(),
 apiConnector: connector,
 alwaysSearchOnInitialLoad: true
 };
-
-import { getPosts } from './actions/posts';
 
 const App = () => {
     const dispatch = useDispatch();
