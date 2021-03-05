@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import './App.css'
 import * as ReactBootStrap from "react-bootstrap";
 // import Search from './components/Search.js';
-
+import ResultView from "./ResultView";
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
 import {
@@ -108,6 +108,7 @@ const App = () => {
                                 titleField={getConfig().titleField}
                                 urlField={getConfig().urlField}
                                 shouldTrackClickThrough={true}
+                                resultView={ResultView}
                                 />
                             }
                             bodyHeader={
