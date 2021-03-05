@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
-// BUG: does not work with import
-// import Restaurant from './RestaurantPage.js';
-
-// TODO: create and initialize Restaurant object according to clicked result
-const Restaurant = {
-    longitude: -73.444889,
-    latitude: 44.978459,
-    name: "Pizza Plus",
-    stars: "4.5",
-    ambience: "5.0",
-    food: "5.0",
-    service: "0.0",
-    business_id: "WCei-r9iAqxEIFX40zOebA",
-  }
+import { Restaurant } from './RestaurantPage.js';
 
 const WIDTH = 20;
 const HEIGHT = 20;
