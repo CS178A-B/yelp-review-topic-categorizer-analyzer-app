@@ -22,10 +22,15 @@ export default () => {
     },
     {
       text: 'Search',
+      href: '#',
+      onClick: (e) => {
+        e.preventDefault();
+      },
     },
     {
-      text: 'Yelp API',
-      href: '#',
+      text: 'GitHub Repository',
+      href: 'https://github.com/CS178A-B/final-project-cool-team',
+      target: '_blank',
       onClick: (e) => {
         e.preventDefault();
       },
