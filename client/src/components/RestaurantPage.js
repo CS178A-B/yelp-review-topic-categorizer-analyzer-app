@@ -1,64 +1,34 @@
 import React from 'react';
+import ReviewCard from './ReviewCard.js'
 
 import {
-    EuiPage,
-    EuiPageContent,
-    EuiPageContentBody,
-    EuiPageHeader,
-    EuiPageSideBar,
-    EuiPageBody,
-  } from '@elastic/eui';
+  EuiPage,
+  EuiPageHeader,
+  EuiButton,
+  EuiPageContentBody,
+  EuiPageBody,
+  EuiFlexGrid,
+} from '@elastic/eui';
 
-import '@elastic/eui/dist/eui_theme_dark.css';
-
-// const page_tabs = [
-//     {
-//       id: 'reviews',
-//       name: 'Reviews',
-//       disabled: false,
-//     },
-//     {
-//       id: 'yelp_link',
-//       name: 'Open on Yelp',
-//       disabled: false,
-//     //   TODO: put restaurant yelp link
-//       href: 'https://www.elastic.co/',
-//     },
-//   ];
-
-export default ({ button = <></>, content, sideNav }) => (
+export default ({ button = <></> }) => (
   <EuiPage paddingSize="none">
-    <EuiPageSideBar sticky>{sideNav}</EuiPageSideBar>
-
-    <EuiPageBody panelled>
+    <EuiPageBody>
       <EuiPageHeader
-        restrictWidth
         iconType="logoElastic"
-        pageTitle="Page title"  // TODO: put restaurant title here
-
-        tabs={[ // TABS REFERENCE: https://elastic.github.io/eui/#/layout/page-header#tabs-in-the-page-header
-            {
-              id: 'reviews',
-              label: 'Reviews', // TODO: put reviews here
-              disabled: false,
-            },
-            {
-              id: 'yelp_link',
-              label: 'Open on Yelp',
-              disabled: false,
-              href: 'https://www.elastic.co/',  //   TODO: put restaurant yelp link
-            },
-          ]}
+        pageTitle="Restaurant Title"
+        rightSideItems={[button, <EuiButton>Yelp Page</EuiButton>]}
+        paddingSize="l"
       />
-      <EuiPageContent
-        hasBorder={false}
-        hasShadow={false}
-        paddingSize="none"
-        color="transparent"
-        borderRadius="none">
-        <EuiPageContentBody restrictWidth>{content}</EuiPageContentBody>
-      </EuiPageContent>
+
+      {/* TODO: add review cards */}
+      <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+        <EuiFlexGrid columns={2}>
+          <ReviewCard/>
+          <ReviewCard/>
+          <ReviewCard/>
+          <ReviewCard/>
+        </EuiFlexGrid>
+      </EuiPageContentBody>
     </EuiPageBody>
   </EuiPage>
 );
-

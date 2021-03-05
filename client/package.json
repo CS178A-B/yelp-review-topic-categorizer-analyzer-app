@@ -6,7 +6,7 @@
   "dependencies": {
     "@elastic/datemath": "^5.0.3",
     "@elastic/eui": "^31.9.1",
-    "@elastic/react-search-ui": "^1.5.0",
+    "@elastic/react-search-ui": "^1.5.1",
     "@elastic/react-search-ui-views": "^1.5.1",
     "@elastic/search-ui-app-search-connector": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.9",
