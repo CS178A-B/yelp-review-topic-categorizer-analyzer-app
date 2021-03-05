@@ -10,8 +10,8 @@ const ReviewCard = () => {
         <EuiFlexItem>
         <EuiCard
             layout="horizontal"
-            title={'Review Date.'}
-            description="Review text."
+            title={'Preview te...'}
+            description="Ambience 5; Service 3; Other 4."
             onClick={() => {}}
             href="#"
             />
