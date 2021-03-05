@@ -35,6 +35,8 @@ Demo: https://youtu.be/dsYeiRCCzcc
 
 ## How To Run
 
+In order for the Google Maps API to show the location of the restaurant, initialize your key in **client/app-env** by replacing `YOUR_MAPS_API_KEY` with your own key.
+
 To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directories to run both the client and server side.
 
 To run the client side in one terminal, change directories into **client**. After that, run `npm install`, then run `npm start`.
