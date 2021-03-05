@@ -35,9 +35,9 @@ Demo: https://youtu.be/dsYeiRCCzcc
 
 ## How To Run
 
-In order for the Google Maps API to show the location of the restaurant, initialize your key in **client/app-env** by replacing `YOUR_MAPS_API_KEY` with your own key.
+To be able to run this application, please clone this repository. After that, you will need to navigate to the correct directories to run both the client and server side.
 
-To be able to run this application, please clone this repository. After that, you will need to navigate to to the correct directories to run both the client and server side.
+In order for the Google Maps API to show the location of the restaurant, initialize your key in **client/app-env** by replacing `YOUR_MAPS_API_KEY` with your own key.
 
 To run the client side in one terminal, change directories into **client**. After that, run `npm install`, then run `npm start`.
 
@@ -45,7 +45,7 @@ To run the server side in another terminal, change directories into **server**. 
 
 ### `npm install`
 
-Installs node package dependencies for this project. (Dependencies may be found in package.json file)
+Installs node package dependencies for this project. (Dependencies may be found in package.json files)
 
 ### `npm start`
 
