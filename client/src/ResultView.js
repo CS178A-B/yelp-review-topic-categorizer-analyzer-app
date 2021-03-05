@@ -1,4 +1,5 @@
 import React from "react";
+import './ResultView.css'
 
 export default ({ result }) => (
   <li className="sui-result">
