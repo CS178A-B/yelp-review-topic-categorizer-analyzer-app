@@ -12,8 +12,8 @@ import {
 
 // TODO: create and initialize Restaurant object according to clicked result
 const Restaurant = {
-  longitude: "-73.444889",
-  latitude: "44.978459",
+  longitude: -73.444889,
+  latitude: 44.978459,
   name: "Pizza Plus",
   stars: "4.5",
   ambience: "5.0",
