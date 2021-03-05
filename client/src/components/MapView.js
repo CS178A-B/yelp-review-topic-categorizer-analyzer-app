@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
+// BUG: does not work with import
+// import Restaurant from './RestaurantPage.js';
+
 // TODO: create and initialize Restaurant object according to clicked result
 const Restaurant = {
     longitude: -73.444889,
     latitude: 44.978459,
     name: "Pizza Plus",
-}
+    stars: "4.5",
+    ambience: "5.0",
+    food: "5.0",
+    service: "0.0",
+    business_id: "WCei-r9iAqxEIFX40zOebA",
+  }
 
 const WIDTH = 20;
 const HEIGHT = 20;
@@ -41,10 +49,9 @@ class MapView extends Component {
   
     render() {
       return (
-        // Important! Always set the container height explicitly
         <div style={{ height: '40vh', width: '100%', padding: '3%'}}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'API_KEY_HERE' }}
+            bootstrapURLKeys={{ key: 'AIzaSyDt3jkJP7E1lT5TmvWxKx5ZTcD2N0n72vM' }}
             defaultZoom={this.props.zoom}
             center={[Restaurant.latitude, Restaurant.longitude]}
           >
