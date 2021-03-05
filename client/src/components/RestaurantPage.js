@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewCard from './ReviewCard.js'
+import MapView from './MapView.js'
 
 import {
   EuiPage,
@@ -36,12 +37,16 @@ export default ({ button = <></> }) => (
 
       {/* TODO: add review cards */}
       <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+        
         <EuiFlexGrid columns={2}>
           <ReviewCard/>
           <ReviewCard/>
           <ReviewCard/>
           <ReviewCard/>
         </EuiFlexGrid>
+
+        <MapView/>
+
       </EuiPageContentBody>
     </EuiPageBody>
   </EuiPage>
