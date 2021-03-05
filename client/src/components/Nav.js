@@ -14,16 +14,16 @@ const Nav = () => {
   const breadcrumbs = [
     {
       text: 'Home',
-      href: '#',
+      href: '/Landing',
       onClick: (e) => {
-        e.preventDefault();
+        // e.preventDefault();
       },
     },
     {
       text: 'Search',
-      href: '#',
+      href: '/Search',
       onClick: (e) => {
-        e.preventDefault();
+        // e.preventDefault();
       },
     },
     {
@@ -31,18 +31,21 @@ const Nav = () => {
       href: 'https://github.com/CS178A-B/final-project-cool-team',
       target: '_blank',
       onClick: (e) => {
-        e.preventDefault();
+        // e.preventDefault();
       },
     }
   ];
 
   return (
     <EuiPageContent>
+
       <EuiBreadcrumbs
         breadcrumbs={breadcrumbs}
         truncate={false}
       />
+
       <EuiSpacer size="xs" />
+
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle size="l">
@@ -50,6 +53,7 @@ const Nav = () => {
           </EuiTitle>
         </EuiPageContentHeaderSection>
       </EuiPageContentHeader>
+
     </EuiPageContent>
   );
 };
