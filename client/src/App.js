@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import RestaurantPage from './components/RestaurantPage.js';
-import Search from './components/Search.js';
+import Landing from './components/Landing';
+import Search from './components/Search';
+import RestaurantPage from './components/RestaurantPage';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import '@elastic/eui/dist/eui_theme_dark.css';
 
 const App = () => {
 
     return (
-        <div>
-            {/* <RestaurantPage/> */}
-            <Search/>
-        </div>
+        <Router>
+            <Route path="/" exact component={Landing} />
+            <Route path="/search" component={Search} />
+            <RestaurantPage/>
+        </Router>
     );
 }
 

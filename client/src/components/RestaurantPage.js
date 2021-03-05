@@ -12,7 +12,7 @@ import {
 } from '@elastic/eui';
 
 // TODO: create and initialize Restaurant object according to clicked result
-const Restaurant = {
+export const Restaurant = {
   longitude: -73.444889,
   latitude: 44.978459,
   name: "Pizza Plus",
