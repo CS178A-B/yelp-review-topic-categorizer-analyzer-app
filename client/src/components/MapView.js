@@ -51,7 +51,7 @@ class MapView extends Component {
       return (
         <div style={{ height: '50vh', width: '100%', padding: '3%'}}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyDzHP_MAk5Kq9u_eW5zuoBDvPd1GEfjWKY' }}
+            bootstrapURLKeys={{ key: process.env.MAPS_API }}
             defaultZoom={this.props.zoom}
             center={[Restaurant.latitude, Restaurant.longitude]}
           >
