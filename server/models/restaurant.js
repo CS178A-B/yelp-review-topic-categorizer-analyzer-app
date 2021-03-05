@@ -1,21 +1,23 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const restaurantSchema = mongoose.Schema({
     business_id: String,
     name: String,
     address: String,
     city: String,
     state: String,
     postal_code: String,
-    latitude: Decimal128,
-    longitude: Decimal128,
-    stars: Decimal128,
+    latitude: String,
+    longitude: String,
+    stars: String,
     categories: String,
-    ambience: Decimal128,
-    service: Decimal128,
-    food: Decimal128
+    ambience: String,
+    service: String,
+    food: String
 });
 
-const Restaurant = mongoose.model('Restaurant', postSchema);
+// const restaurantSchema = mongoose.Schema({}, {strict: false});
+
+const Restaurant = mongoose.model('Restaurant', restaurantSchema, 'newyork_restaurants');
 
 export default Restaurant;

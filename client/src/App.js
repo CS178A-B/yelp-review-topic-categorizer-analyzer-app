@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-// import Search from './components/Search.js';
+import Posts from './components/Posts/Posts'
+import Search from './components/Search.js';
+import { getPosts } from './actions/posts';
 
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
@@ -28,8 +30,6 @@ import {
     getFacetFields
 } from "./config/config-helper";
 
-import { getPosts } from './actions/posts';
-
 const { hostIdentifier, searchKey, endpointBase, engineName } = getConfig();
 const connector = new AppSearchAPIConnector({
 searchKey,
@@ -55,50 +55,48 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <div>
-            <SearchProvider config={config}>
-                <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
-                    {({ wasSearched }) => {
-                    return (
-                        <div className="App">
-                        <ErrorBoundary>
-                            <Layout
-                            header={<SearchBox autocompleteSuggestions={true} />}
-                            sideContent={
-                                <div>
-                                {wasSearched && (
-                                    <Sorting
-                                    label={"Sort by"}
-                                    sortOptions={buildSortOptionsFromConfig()}
-                                    />
-                                )}
-                                {getFacetFields().map(field => (
-                                    <Facet key={field} field={field} label={field} />
-                                ))}
-                                </div>
-                            }
-                            bodyContent={
-                                <Results
-                                titleField={getConfig().titleField}
-                                urlField={getConfig().urlField}
-                                shouldTrackClickThrough={true}
+        <SearchProvider config={config}>
+            <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
+                {({ wasSearched }) => {
+                return (
+                    <div className="App">
+                    <ErrorBoundary>
+                        <Layout
+                        header={<SearchBox autocompleteSuggestions={true} />}
+                        sideContent={
+                            <div>
+                            {wasSearched && (
+                                <Sorting
+                                label={"Sort by"}
+                                sortOptions={buildSortOptionsFromConfig()}
                                 />
-                            }
-                            bodyHeader={
-                                <React.Fragment>
-                                {wasSearched && <PagingInfo />}
-                                {wasSearched && <ResultsPerPage />}
-                                </React.Fragment>
-                            }
-                            bodyFooter={<Paging />}
+                            )}
+                            {getFacetFields().map(field => (
+                                <Facet key={field} field={field} label={field} />
+                            ))}
+                            </div>
+                        }
+                        bodyContent={
+                            <Results
+                            titleField={getConfig().titleField}
+                            urlField={getConfig().urlField}
+                            shouldTrackClickThrough={true}
                             />
-                        </ErrorBoundary>
-                        </div>
-                    );
-                    }}
-                </WithSearch>
-            </SearchProvider>
-        </div>
+                        }
+                        bodyHeader={
+                            <React.Fragment>
+                            {wasSearched && <PagingInfo />}
+                            {wasSearched && <ResultsPerPage />}
+                            </React.Fragment>
+                        }
+                        bodyFooter={<Paging />}
+                        />
+                    </ErrorBoundary>
+                    </div>
+                );
+                }}
+            </WithSearch>
+        </SearchProvider>
     );
 }
 

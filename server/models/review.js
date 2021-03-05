@@ -1,16 +1,16 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const reviewSchema = mongoose.Schema({
     business_id: String,
     user_id: String,
-    stars: Decimal128,
+    stars: String,
     text: String,
     date: String,
-    ambience: Decimal128,
-    service: Decimal128,
-    food: Decimal128
+    ambience: String,
+    service: String,
+    food: String
 });
 
-const Review = mongoose.model('Review', postSchema);
+const Review = mongoose.model('Review', reviewSchema, 'newyork_reviews');
 
 export default Review;
