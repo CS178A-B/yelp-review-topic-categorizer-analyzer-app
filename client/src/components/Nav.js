@@ -10,7 +10,7 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-export default () => {
+const Nav = () => {
   const breadcrumbs = [
     {
       text: 'Home',
@@ -59,3 +59,5 @@ export default () => {
     </EuiPageContent>
   );
 };
+
+export default Nav;
