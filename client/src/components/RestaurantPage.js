@@ -27,10 +27,8 @@ export default ({ button = <></> }) => (
   <EuiPage paddingSize="none">
     <EuiPageBody>
       <EuiPageHeader
-        // DONE: add restaurant name
         pageTitle={Restaurant.name}
         description={"Overall Rating: " + Restaurant.stars}
-        // DONE: add yelp url
         rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + Restaurant.business_id}>Yelp Page</EuiButton>]}
         paddingSize="l"
       />
@@ -39,6 +37,11 @@ export default ({ button = <></> }) => (
       <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
         
         <EuiFlexGrid columns={2}>
+          {/* <div>
+            {reviews.map(review =>
+              <ReviewCard/>
+            )}
+          </div> */}
           <ReviewCard/>
           <ReviewCard/>
           <ReviewCard/>
