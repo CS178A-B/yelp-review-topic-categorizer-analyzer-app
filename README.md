@@ -37,11 +37,11 @@ Demo: https://youtu.be/dsYeiRCCzcc
 
 To be able to run this application, please clone this repository. After that, you will need to navigate to the correct directories to run both the client and server side.
 
-In order for the Google Maps API to show the location of the restaurant, initialize your key in **client/app-env** by replacing `YOUR_MAPS_API_KEY` with your own key.
+In order for the Google Maps API to show the location of the restaurant, initialize your key in **[client/app-env](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/app-env)** by replacing `YOUR_MAPS_API_KEY` with your own key.
 
-To run the client side in one terminal, change directories into **client**. After that, run `npm install`, then run `npm start`.
+To run the client side in one terminal, change directories into **[client](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/)**. After that, run `npm install`, then run `npm start`.
 
-To run the server side in another terminal, change directories into **server**. After that, run `npm install`, then run `npm start`.
+To run the server side in another terminal, change directories into **[server](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/)**. After that, run `npm install`, then run `npm start`.
 
 ### `npm install`
 
@@ -102,12 +102,4 @@ The application begins with the Yelp Review Dataset which contains reviews for r
 
 ## Dependencies
 
-Install [Node Package Manager](https://www.npmjs.com/get-npm)
-
-Install [Express](https://expressjs.com/en/resources/middleware/cors.html)
-
-Install `body-parser`, which allows us to get data throughout the requet
-
-Install `mongoose`, which connects/interacts with MongoDB
-
-Install `validation`, which is used for validation
+Install [Node Package Manager](https://www.npmjs.com/get-npm). (More dependencies may be found in **[client/package.json](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/package.json)** and **[server/package.json](https://github.com/CS178A-B/final-project-cool-team/blob/master/server/package.json)** files).
