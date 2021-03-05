@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Nav from './components/Nav'
 import Landing from './components/Landing';
 import Search from './components/Search';
 import RestaurantPage from './components/RestaurantPage';
@@ -11,6 +12,7 @@ const App = () => {
 
     return (
         <Router>
+            <Nav/>
             <Route path="/" exact component={Landing} />
             <Route path="/search" component={Search} />
             <RestaurantPage/>

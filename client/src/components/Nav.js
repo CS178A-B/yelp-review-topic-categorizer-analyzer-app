@@ -10,7 +10,7 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-export default () => {
+const Nav = () => {
   const breadcrumbs = [
     {
       text: 'Home',
@@ -18,7 +18,6 @@ export default () => {
       onClick: (e) => {
         e.preventDefault();
       },
-      'data-test-subj': 'breadcrumbsAnimals',
     },
     {
       text: 'Search',
@@ -42,20 +41,17 @@ export default () => {
       <EuiBreadcrumbs
         breadcrumbs={breadcrumbs}
         truncate={false}
-        aria-label="An example of EuiBreadcrumbs"
       />
       <EuiSpacer size="xs" />
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle size="l">
-            <h1>Boa constrictor</h1>
+            <h1>Yelp Review Topic Categorizer & Analyzer</h1>
           </EuiTitle>
-        </EuiPageContentHeaderSection>
-
-        <EuiPageContentHeaderSection>
-          <EuiButton>Cancel</EuiButton>
         </EuiPageContentHeaderSection>
       </EuiPageContentHeader>
     </EuiPageContent>
   );
 };
+
+export default Nav;
