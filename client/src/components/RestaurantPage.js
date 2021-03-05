@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewCard from './ReviewCard.js'
+import MapView from './MapView.js'
 
 import {
   EuiPage,
@@ -12,8 +13,8 @@ import {
 
 // TODO: create and initialize Restaurant object according to clicked result
 const Restaurant = {
-  longitude: "-73.444889",
-  latitude: "44.978459",
+  longitude: -73.444889,
+  latitude: 44.978459,
   name: "Pizza Plus",
   stars: "4.5",
   ambience: "5.0",
@@ -36,12 +37,16 @@ export default ({ button = <></> }) => (
 
       {/* TODO: add review cards */}
       <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+        
         <EuiFlexGrid columns={2}>
           <ReviewCard/>
           <ReviewCard/>
           <ReviewCard/>
           <ReviewCard/>
         </EuiFlexGrid>
+
+        <MapView/>
+
       </EuiPageContentBody>
     </EuiPageBody>
   </EuiPage>
