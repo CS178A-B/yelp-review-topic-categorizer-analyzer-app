@@ -45,11 +45,11 @@ const tabs = [
     disabled: false,
   },
   {
-    id: 'githubPage',
+    id: 'projectPage',
     name: (
       <span>
         <EuiIcon type="logoGithub" />
-        &nbsp;GitHub Repository
+        &nbsp;Project Repository
       </span>
     ),
     href: 'https://github.com/CS178A-B/final-project-cool-team',
