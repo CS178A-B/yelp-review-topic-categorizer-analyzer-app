@@ -1,60 +1,90 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
+import Landing from './Landing';
+import Search from './Search';
 
 import {
-  EuiBreadcrumbs,
-  EuiButton,
-  EuiPageContent,
-  EuiPageContentHeader,
-  EuiPageContentHeaderSection,
-  EuiTitle,
+  EuiIcon,
+  EuiTabbedContent,
   EuiSpacer,
+  EuiTitle,
 } from '@elastic/eui';
 
+const tabs = [
+  {
+    id: 'homePage',
+    name: (
+        <span>
+          <EuiIcon type="home" />
+          &nbsp;Home
+        </span>
+      ),
+    content: (
+        <React.Fragment>
+            <Landing/>
+        </React.Fragment>
+    ),
+    // href: '/Landing',
+    target: '_self',
+    disabled: false,
+  },
+  {
+    id: 'searchPage',
+    name: (
+        <span>
+          <EuiIcon type="search" />
+          &nbsp;Search
+        </span>
+      ),
+    content: (
+        <React.Fragment>
+            <Search/>
+        </React.Fragment>
+    ),
+    // href: '/Search',
+    target: '_self',
+    disabled: false,
+  },
+  {
+    id: 'githubPage',
+    name: (
+      <span>
+        <EuiIcon type="logoGithub" />
+        &nbsp;GitHub Repository
+      </span>
+    ),
+    href: 'https://github.com/CS178A-B/final-project-cool-team',
+    target: '_blank',
+    disabled: false,
+  },
+];
+
 const Nav = () => {
-  const breadcrumbs = [
-    {
-      text: 'Home',
-      href: '/Landing',
-      onClick: (e) => {
-        // e.preventDefault();
-      },
-    },
-    {
-      text: 'Search',
-      href: '/Search',
-      onClick: (e) => {
-        // e.preventDefault();
-      },
-    },
-    {
-      text: 'GitHub Repository',
-      href: 'https://github.com/CS178A-B/final-project-cool-team',
-      target: '_blank',
-      onClick: (e) => {
-        // e.preventDefault();
-      },
-    }
-  ];
 
-  return (
-    <EuiPageContent>
+  const navTitleStyle = {
+    paddingLeft: '15px',
+  }
 
-      <EuiBreadcrumbs
-        breadcrumbs={breadcrumbs}
-        truncate={false}
-      />
+return (
+    <React.Fragment>
 
-      <EuiSpacer size="xs" />
+        <br/>
 
-      <EuiPageContentHeader>
-        <EuiPageContentHeaderSection>
-          <EuiTitle size="l">
-            <h1>Yelp Review Topic Categorizer & Analyzer</h1>
-          </EuiTitle>
-        </EuiPageContentHeaderSection>
-      </EuiPageContentHeader>
+        <EuiTitle size="l">
+            <a href='/Landing'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
+        </EuiTitle>
 
-    </EuiPageContent>
+        <br/>
+        
+        <EuiTabbedContent
+        tabs={tabs}
+        initialSelectedTab={tabs[1]}
+        autoFocus="selected"
+        onTabClick={(tab) => {
+            console.log('Clicked tab', tab);
+        }}
+        />
+
+    </React.Fragment>
   );
 };
 

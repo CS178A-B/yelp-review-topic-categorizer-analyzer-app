@@ -57,12 +57,12 @@ const Search = () => {
                         header={<SearchBox autocompleteSuggestions={true} />}
                         sideContent={
                             <div>
-                            {wasSearched && (
+                            {/* {wasSearched && (
                                 <Sorting
                                 label={"Sort by"}
                                 sortOptions={buildSortOptionsFromConfig()}
                                 />
-                            )}
+                            )} */}
                             {getFacetFields().map(field => (
                                 <Facet key={field} field={field} label={field} />
                             ))}

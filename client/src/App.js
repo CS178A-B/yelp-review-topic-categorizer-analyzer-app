@@ -6,7 +6,8 @@ import Search from './components/Search';
 import RestaurantPage from './components/RestaurantPage';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import '@elastic/eui/dist/eui_theme_dark.css';
+import '@elastic/eui/dist/eui_theme_light.css';
+// import '@elastic/eui/dist/eui_theme_dark.css';
 
 const App = () => {
 
@@ -15,7 +16,7 @@ const App = () => {
             <Nav/>
             <Route path="/" exact component={Landing} />
             <Route path="/search" component={Search} />
-            <RestaurantPage/>
+            {/* <RestaurantPage/> */}
         </Router>
     );
 }

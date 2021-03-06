@@ -1,10 +1,9 @@
 import React from 'react';
-import Nav from './Nav'
 
 const Landing = () => {
     return (
         <React.Fragment>
-            <Nav />
+            <span>Landing Page</span>
         </React.Fragment>
     );
 }
