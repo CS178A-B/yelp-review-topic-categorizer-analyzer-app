@@ -18,12 +18,12 @@ const tabs = [
           &nbsp;Home
         </span>
       ),
-    content: (
-        <React.Fragment>
-            <Landing/>
-        </React.Fragment>
-    ),
-    // href: '/Landing',
+    // content: (
+    //     // <React.Fragment>
+    //     //     <Landing/>
+    //     // </React.Fragment>
+    // ),
+    href: '/home',
     target: '_self',
     disabled: false,
   },
@@ -35,12 +35,12 @@ const tabs = [
           &nbsp;Search
         </span>
       ),
-    content: (
-        <React.Fragment>
-            <Search/>
-        </React.Fragment>
-    ),
-    // href: '/Search',
+    // content: (
+    //     // <React.Fragment>
+    //     //     <Search/>
+    //     // </React.Fragment>
+    // ),
+    href: '/search',
     target: '_self',
     disabled: false,
   },
@@ -70,7 +70,7 @@ return (
         <br/>
 
         <EuiTitle size="l">
-            <a href='/Landing'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
+            <a href='/home'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
         </EuiTitle>
 
         <br/>

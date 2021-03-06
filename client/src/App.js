@@ -14,7 +14,7 @@ const App = () => {
     return (
         <Router>
             <Nav/>
-            <Route path="/" exact component={Landing} />
+            <Route path="/home" component={Landing} />
             <Route path="/search" component={Search} />
             {/* <RestaurantPage/> */}
         </Router>
