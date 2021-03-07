@@ -5,8 +5,9 @@ import Search from './Search';
 import {
   EuiIcon,
   EuiTabbedContent,
-  EuiSpacer,
   EuiTitle,
+  EuiText,
+  EuiSpacer,
 } from '@elastic/eui';
 
 const tabs = [
@@ -18,12 +19,10 @@ const tabs = [
           &nbsp;Home
         </span>
       ),
-    // content: (
-    //     // <React.Fragment>
-    //     //     <Landing/>
-    //     // </React.Fragment>
-    // ),
-    href: '/home',
+    content: (
+      <Landing/>
+    ),
+    // href: '/home',
     target: '_self',
     disabled: false,
   },
@@ -35,12 +34,10 @@ const tabs = [
           &nbsp;Search
         </span>
       ),
-    // content: (
-    //     // <React.Fragment>
-    //     //     <Search/>
-    //     // </React.Fragment>
-    // ),
-    href: '/search',
+    content: (
+      <Search/>
+    ),
+    // href: '/search',
     target: '_self',
     disabled: false,
   },
@@ -67,21 +64,17 @@ const Nav = () => {
 return (
     <React.Fragment>
 
-        <br/>
-
         <EuiTitle size="l">
             <a href='/home'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
         </EuiTitle>
 
-        <br/>
-        
         <EuiTabbedContent
-        tabs={tabs}
-        initialSelectedTab={tabs[1]}
-        autoFocus="selected"
-        onTabClick={(tab) => {
-            console.log('Clicked tab', tab);
-        }}
+          tabs={tabs}
+          initialSelectedTab={tabs[1]}
+          autoFocus="selected"
+          onTabClick={(tab) => {
+            console.log('clicked tab', tab);
+          }}
         />
 
     </React.Fragment>
