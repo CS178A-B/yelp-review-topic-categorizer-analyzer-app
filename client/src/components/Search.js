@@ -1,4 +1,5 @@
 import React from "react";
+import ResultView from "./ResultView.js";
 
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
@@ -73,6 +74,7 @@ const Search = () => {
                             titleField={getConfig().titleField}
                             urlField={getConfig().urlField}
                             shouldTrackClickThrough={true}
+                            resultView={ResultView}
                             />
                         }
                         bodyHeader={
