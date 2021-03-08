@@ -7,18 +7,18 @@ import { Link } from 'react-router-dom';
 
 const ResultView = ({ result }) => (
   <React.Fragment>
-
+  
   <li className="sui-result">
+  <Link to={`/restaurant/${result.business_id.raw}`}>
     
       <div className="sui-result__header">
-      <Link to={`/restaurant/${result.business_id.raw}`}>
+      
           <span
             className="sui-result__title"
             // Snippeted results contain search term highlights with html and are
             // 100% safe and santitized, so we dangerously set them here
             dangerouslySetInnerHTML={{ __html: result.name.snippet }}
           />
-      </Link>
         
       </div>
     
@@ -42,8 +42,9 @@ const ResultView = ({ result }) => (
         </li>
       </ul>
     </div>
+    </Link>
   </li>
-
+  
   </React.Fragment>
 );
 
