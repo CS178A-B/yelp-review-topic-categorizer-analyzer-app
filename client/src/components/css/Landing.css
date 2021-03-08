@@ -1,11 +1,16 @@
 .landing-body {
-    position: relative;
-    display: flex;
-    background-image: url('https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
-    max-width: 100vw;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
+  position: relative;
+  display: flex;
+  max-width: 100vw;
+
+  background-image: url('https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  justify-content: center;
 }
 
 .landing-title {
