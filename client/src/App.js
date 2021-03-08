@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import Nav from './components/Nav'
 import Landing from './components/Landing';
 import Search from './components/Search';
-import RestaurantPage from './components/RestaurantPage';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import '@elastic/eui/dist/eui_theme_light.css';

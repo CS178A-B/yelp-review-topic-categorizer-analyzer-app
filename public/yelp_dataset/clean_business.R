@@ -30,16 +30,26 @@ restaurants_only <- yelp_tibble %>% select(-starts_with("hours"), -starts_with("
 
 restaurants_only %>% select(state) %>% count(unique(state))
 
-ohio_restaurants <- restaurants_only[ restaurants_only$state=="OH", ]
+# toronto_restaurants <- restaurants_only[ restaurants_only$state=="NY", ]
+toronto_restaurants <- restaurants_only[ restaurants_only$city=="Toronto", ]
+toronto_restaurants <- head(toronto_restaurants, 200)
+toronto_restaurants$image_url <- ""
 
+for (i in 1:nrow(toronto_restaurants)) {   # bad practice but apply functions have not worked
+  toronto_restaurants[[i, 11]] <- getImageURL(toronto_restaurants[[i, 1]])
+}
+# Remove rows with no photo
+toronto_restaurants <- toronto_restaurants[!toronto_restaurants$image_url=="",]
+
+business_df <- data.frame(functionA(toronto_restaurants$business_id))
 # print(object.size(arizona_restaurants), units="auto", standard = "SI")
-# write_json(ohio_restaurants, "ohio_restaurants.json")
+# write_json(toronto_restaurants, "toronto_restaurants.json")
 
 # df of restaurants only
-restaurant_id <- ohio_restaurants %>% select(business_id)
+restaurant_id <- toronto_restaurants %>% select(business_id)
 
 # list of categories
-categories <- ohio_restaurants %>% mutate(categories = as.character(categories)) %>% select(categories) %>%
+categories <- toronto_restaurants %>% mutate(categories = as.character(categories)) %>% select(categories) %>%
   mutate(categories1 = stringr::str_split(categories, ",")) %>% unnest(categories1) %>% select(categories1)
 
 
@@ -49,7 +59,7 @@ categories <- categories[!duplicated(categories$categories1),]
 
 
 # Estimate memory size, note that MongoDB cluster is limited
-print(object.size(ohio_restaurants), units="auto", standard = "SI")
+print(object.size(toronto_restaurants), units="auto", standard = "SI")
 
 
 

@@ -112,13 +112,6 @@ def getRating(scores, categories):
         other_avg = 0
             
     review_with_score = review(getStar(ambience_avg), getStar(service_avg), getStar(food_avg), other_avg)
-    review_scores.append(review_with_score)
-    
-    # print(review_with_score.ambience)
-    # print(review_with_score.service)
-    # print(review_with_score.food)
-    # print(review_with_score.other)
-    
     
     return review_with_score
     
