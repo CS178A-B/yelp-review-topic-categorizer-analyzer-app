@@ -14,9 +14,11 @@ const App = () => {
     return (
         <Router>
             <Nav/>
-            <Route path="/home" component={Landing} />
-            <Route path="/search" component={Search} />
-            <Route path="/restaurant/:id" component={RestaurantPage} />
+            <Switch>
+                <Route path="/" exact component={Landing} />
+                <Route path="/search" component={Search} />
+                <Route path="/restaurant/:id" component={RestaurantPage} />
+            </Switch>
         </Router>
     );
 }

@@ -1,13 +1,14 @@
 import React, { useState, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Landing from './Landing';
 import Search from './Search';
 
 import {
   EuiIcon,
-  EuiTabbedContent,
-  EuiTitle,
-  EuiText,
+  EuiTabs,
+  EuiTab,
   EuiSpacer,
+  EuiTitle,
 } from '@elastic/eui';
 
 const tabs = [
@@ -19,10 +20,7 @@ const tabs = [
           &nbsp;Home
         </span>
       ),
-    content: (
-      <Landing/>
-    ),
-    // href: '/home',
+    href: '/',
     target: '_self',
     disabled: false,
   },
@@ -34,10 +32,7 @@ const tabs = [
           &nbsp;Search
         </span>
       ),
-    content: (
-      <Search/>
-    ),
-    // href: '/search',
+    href: '/search',
     target: '_self',
     disabled: false,
   },
@@ -61,6 +56,25 @@ const Nav = () => {
     paddingLeft: '15px',
   }
 
+  const [selectedTabId, setSelectedTabId] = useState('cobalt');
+
+  const onSelectedTabChanged = (id) => {
+    setSelectedTabId(id);
+  };
+
+  const renderTabs = () => {
+    return tabs.map((tab, index) => (
+      <EuiTab
+        {...(tab.href && { href: tab.href, target: '_self' })}
+        onClick={() => onSelectedTabChanged(tab.id)}
+        isSelected={tab.id === selectedTabId}
+        disabled={tab.disabled}
+        key={index}>
+        {tab.name}
+      </EuiTab>
+    ));
+  };
+
 return (
     <React.Fragment>
 
@@ -68,14 +82,7 @@ return (
             <a href='/home'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
         </EuiTitle>
 
-        <EuiTabbedContent
-          tabs={tabs}
-          initialSelectedTab={tabs[1]}
-          autoFocus="selected"
-          onTabClick={(tab) => {
-            console.log('clicked tab', tab);
-          }}
-        />
+      <EuiTabs size="l">{renderTabs()}</EuiTabs>
 
     </React.Fragment>
   );

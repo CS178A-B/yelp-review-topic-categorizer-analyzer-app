@@ -11,19 +11,14 @@ const ResultView = ({ result }) => (
   <li className="sui-result">
     
       <div className="sui-result__header">
-      <Link
-        to={{
-          pathname: `/restaurant/${result.business_id.raw}`,
-          component: {RestaurantPage},
-        }}>
-
+      <Link to={`/restaurant/${result.business_id.raw}`}>
           <span
             className="sui-result__title"
             // Snippeted results contain search term highlights with html and are
             // 100% safe and santitized, so we dangerously set them here
             dangerouslySetInnerHTML={{ __html: result.name.snippet }}
           />
-        </Link>
+      </Link>
         
       </div>
     
