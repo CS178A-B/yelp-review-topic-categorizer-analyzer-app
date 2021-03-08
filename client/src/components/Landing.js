@@ -8,7 +8,6 @@ const Landing = () => {
                 <div class="landing-body">
                     <span>Landing Page</span>
                 </div>
-                
             </React.Fragment>
     );
 }
