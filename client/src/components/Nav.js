@@ -68,10 +68,6 @@ const Nav = () => {
 return (
     <React.Fragment>
 
-        <EuiTitle size="l">
-            <a href='/home'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
-        </EuiTitle>
-
       <EuiTabs size="l">{renderTabs()}</EuiTabs>
 
     </React.Fragment>
