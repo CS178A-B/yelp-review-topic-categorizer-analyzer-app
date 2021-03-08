@@ -1,5 +1,5 @@
 import React from "react";
-import { StarFill, Star, StarHalf } from 'bootstrap-icons-react';
+import { StarFill, Star, StarHalf } from 'react-bootstrap-icons';
 import './StarsRender.css'
 
 export function starsRender(value) {
