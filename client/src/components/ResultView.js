@@ -4,6 +4,7 @@ import { starsRender } from './Stars/StarsRender.js';
 import './ResultView.css'
 import { Link } from 'react-router-dom';
 
+
 const ResultView = ({ result }) => (
   <React.Fragment>
 

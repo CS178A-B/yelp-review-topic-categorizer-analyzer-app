@@ -16,7 +16,7 @@ const App = () => {
             <Nav/>
             <Route path="/home" component={Landing} />
             <Route path="/search" component={Search} />
-            <Route path="/restaurant/" component={RestaurantPage} />
+            <Route path="/restaurant/:id" component={RestaurantPage} />
         </Router>
     );
 }

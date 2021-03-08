@@ -23,7 +23,7 @@ export const Restaurant = {
   business_id: "WCei-r9iAqxEIFX40zOebA",
 }
 
-export default ({ button = <></> }) => (
+const RestaurantPage = ({ button = <></> }) => (
   <EuiPage paddingSize="none">
     <EuiPageBody>
       <EuiPageHeader
@@ -54,3 +54,5 @@ export default ({ button = <></> }) => (
     </EuiPageBody>
   </EuiPage>
 );
+
+export default RestaurantPage;
