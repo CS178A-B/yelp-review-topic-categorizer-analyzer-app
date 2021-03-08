@@ -64,18 +64,27 @@ const Nav = () => {
 return (
     <React.Fragment>
 
-        <EuiTitle size="l">
-            <a href='/home'><span style={navTitleStyle}>Yelp Topic Review Categorizer & Analyzer</span></a>
-        </EuiTitle>
+        <div class="nav-body">
 
-        <EuiTabbedContent
-          tabs={tabs}
-          initialSelectedTab={tabs[1]}
-          autoFocus="selected"
-          onTabClick={(tab) => {
-            console.log('clicked tab', tab);
-          }}
-        />
+          <div id="nav-title">
+            {/* <br/>
+            <EuiTitle size="s">
+                <a href='/home'><span style={navTitleStyle}>App Name</span></a>
+            </EuiTitle> */}
+          </div>
+
+          <div id="nav-tabs">
+            <EuiTabbedContent
+              tabs={tabs}
+              initialSelectedTab={tabs[1]}
+              autoFocus="selected"
+              onTabClick={(tab) => {
+                console.log('clicked tab', tab);
+              }}
+            />
+          </div>
+
+        </div>
 
     </React.Fragment>
   );
