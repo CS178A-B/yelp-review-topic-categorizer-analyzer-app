@@ -13,39 +13,27 @@ import {
 
 const tabs = [
   {
-    id: 'homePage',
+    id: '',
     name: (
         <span>
           <EuiIcon type="home" />
           &nbsp;Home
         </span>
       ),
-    href: '/',
+    // href: '/',
     target: '_self',
     disabled: false,
   },
   {
-    id: 'searchPage',
+    id: 'search',
     name: (
         <span>
           <EuiIcon type="search" />
           &nbsp;Search
         </span>
       ),
-    href: '/search',
+    // href: '/search',
     target: '_self',
-    disabled: false,
-  },
-  {
-    id: 'projectPage',
-    name: (
-      <span>
-        <EuiIcon type="logoGithub" />
-        &nbsp;Project Repository
-      </span>
-    ),
-    href: 'https://github.com/CS178A-B/final-project-cool-team',
-    target: '_blank',
     disabled: false,
   },
 ];
@@ -64,14 +52,16 @@ const Nav = () => {
 
   const renderTabs = () => {
     return tabs.map((tab, index) => (
-      <EuiTab
-        {...(tab.href && { href: tab.href, target: '_self' })}
-        onClick={() => onSelectedTabChanged(tab.id)}
-        isSelected={tab.id === selectedTabId}
-        disabled={tab.disabled}
-        key={index}>
-        {tab.name}
-      </EuiTab>
+      <Link to={`/${tab.id}`}>
+        <EuiTab
+          {...(tab.href && { href: tab.href, target: '_self' })}
+          onClick={() => onSelectedTabChanged(tab.id)}
+          isSelected={tab.id === selectedTabId}
+          disabled={tab.disabled}
+          key={index}>
+          {tab.name}  
+        </EuiTab>
+      </Link>
     ));
   };
 

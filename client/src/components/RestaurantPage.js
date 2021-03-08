@@ -1,4 +1,5 @@
 import React from 'react';
+import { starsRender } from './Stars/StarsRender.js';
 import ReviewCard from './ReviewCard.js'
 import MapView from './MapView.js'
 
