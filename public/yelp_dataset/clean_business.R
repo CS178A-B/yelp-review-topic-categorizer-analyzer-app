@@ -32,12 +32,14 @@ restaurants_only %>% select(state) %>% count(unique(state))
 
 # toronto_restaurants <- restaurants_only[ restaurants_only$state=="NY", ]
 toronto_restaurants <- restaurants_only[ restaurants_only$city=="Toronto", ]
-toronto_restaurants <- head(toronto_restaurants, 100)
+toronto_restaurants <- head(toronto_restaurants, 200)
 toronto_restaurants$image_url <- ""
 
 for (i in 1:nrow(toronto_restaurants)) {   # bad practice but apply functions have not worked
   toronto_restaurants[[i, 11]] <- getImageURL(toronto_restaurants[[i, 1]])
 }
+# Remove rows with no photo
+toronto_restaurants <- toronto_restaurants[!toronto_restaurants$image_url=="",]
 
 business_df <- data.frame(functionA(toronto_restaurants$business_id))
 # print(object.size(arizona_restaurants), units="auto", standard = "SI")
