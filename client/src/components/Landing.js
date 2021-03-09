@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
     EuiPage,
@@ -32,24 +33,30 @@ const Landing = ({ button = <></>, content }) => {
                                     <div class="landing-content">
                                 
                                     <EuiEmptyPrompt
-                                        iconType="dataVisualizer"
+                                        iconType="discoverApp"
                                         iconColor={null}
-                                        title={<h2>You have no spice</h2>}
-                                        titleSize="xs"
+                                        title={<h2>Find your <span class="underline--magical">eating experience</span>.</h2>}
+                                        titleSize="l"
                                         body={
                                         <React.Fragment>
                                             <p>
-                                            Navigators use massive amounts of spice to gain a limited form of
-                                            prescience. This allows them to safely navigate interstellar space,
-                                            enabling trade and travel throughout the galaxy.
+                                            Each restaurant has that eating experience they're known for. It could be their mouth-watering food, their Instagram-worthy ambience, or friendly service that makes you want to come back for more.
                                             </p>
-                                            <p>You&rsquo;ll need spice to rule Arrakis, young Atreides.</p>
-                                        </React.Fragment>
+                                            
+                                            <p>
+                                                The <span class="underline--magical">Yelp Review Topic Categorizer & Analyzer</span> uses machine learning technology to categorize and analyze the sentiments of Yelp Reviews to determine the strengths of a restaurant.
+                                            </p>
+                                            
+                                            <p>Narrow down your dining preferences to find the perfect place for you!</p>
+                                            
+                                        </React.Fragment> 
                                         }
                                         actions={
-                                        <EuiButton size="s" color="primary" fill>
-                                            Harvest spice
-                                        </EuiButton>
+                                        <Link to={'/search'}>
+                                            <EuiButton size="s" color="danger" fill>
+                                                Search Restaurants
+                                            </EuiButton>
+                                        </Link>
                                         }
                                     />
 

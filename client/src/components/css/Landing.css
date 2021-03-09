@@ -37,5 +37,17 @@
 }
 
 .landing-content {
-  width: 60vw;
+  width: 50vw;
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #ffe2a4 0%, #bf4b44 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+
+.underline--magical:hover {
+  background-size: 100% 88%;
 }
