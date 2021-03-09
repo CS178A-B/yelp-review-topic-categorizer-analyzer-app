@@ -53,7 +53,7 @@ const Landing = ({ button = <></>, content }) => {
                                         }
                                         actions={
                                         <Link to={'/search'}>
-                                            <EuiButton size="s" color="danger" fill>
+                                            <EuiButton size="s" color="primary" fill>
                                                 Search Restaurants
                                             </EuiButton>
                                         </Link>
