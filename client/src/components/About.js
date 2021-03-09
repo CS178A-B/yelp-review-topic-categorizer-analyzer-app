@@ -12,12 +12,12 @@ export default () => {
   const tabs = [
     {
       id: 'about--id',
-      name: 'About',
+      name: 'How It Works',
       content: (
         <Fragment>
           <EuiSpacer />
           <EuiTitle>
-            <h3>About</h3>
+            <h3>How It Works</h3>
           </EuiTitle>
           <EuiText>
               The Yelp Review Topic Categorizer and Analyzer comes up with an empyrical analysis of Yelp Reviews
@@ -28,12 +28,12 @@ export default () => {
     },
     {
       id: 'how_to--id',
-      name: 'How To',
+      name: 'About The Team',
       content: (
         <Fragment>
           <EuiSpacer />
           <EuiTitle>
-            <h3>How to Use</h3>
+            <h3>About The Team</h3>
           </EuiTitle>
           <EuiText>
             blah blah blah
