@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { getRestaurant } from './actions/restaurants';
 import Nav from './components/Nav'
 import RestaurantPage from './components/RestaurantPage';
 import Landing from './components/Landing';
@@ -10,6 +12,11 @@ import '@elastic/eui/dist/eui_theme_light.css';
 // import '@elastic/eui/dist/eui_theme_dark.css';
 
 const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getRestaurant());
+    }, [dispatch]);
 
     return (
         <Router>

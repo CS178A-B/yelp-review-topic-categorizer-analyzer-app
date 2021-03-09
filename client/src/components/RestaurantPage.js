@@ -1,7 +1,9 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { starsRender } from './Stars/StarsRender.js';
 import ReviewCard from './ReviewCard.js'
 import MapView from './MapView.js'
+import { getRestaurant, getRestaurants } from '../actions/restaurants.js';
 
 import {
   EuiPage,
@@ -24,36 +26,46 @@ export const Restaurant = {
   business_id: "WCei-r9iAqxEIFX40zOebA",
 }
 
-const RestaurantPage = ({ button = <></> }) => (
-  <EuiPage paddingSize="none">
-    <EuiPageBody>
-      <EuiPageHeader
-        pageTitle={Restaurant.name}
-        description={"Overall Rating: " + Restaurant.stars}
-        rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + Restaurant.business_id}>Yelp Page</EuiButton>]}
-        paddingSize="l"
-      />
+function RestaurantPage({ button = <></>, match }) {
+  const dispatch = useDispatch();
+  dispatch(getRestaurant(match.params.id));
+  const restaurant = useSelector((state) => state.restaurant);
+  // console.log(restaurant[0]);
 
-      {/* TODO: add review cards */}
-      <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
-        
-        <EuiFlexGrid columns={2}>
-          {/* <div>
-            {reviews.map(review =>
-              <ReviewCard/>
-            )}
-          </div> */}
-          <ReviewCard/>
-          <ReviewCard/>
-          <ReviewCard/>
-          <ReviewCard/>
-        </EuiFlexGrid>
+  // if(restaurant[0] === undefined) {
+  //   console.log(restaurant);
+  // }
+  // console.log(match.params.id);
+  return (
+    <EuiPage paddingSize="none">
+      <EuiPageBody>
+        <EuiPageHeader
+          pageTitle={restaurant.name}
+          description={"Overall Rating: " + restaurant.stars}
+          rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
+          paddingSize="l"
+        />
 
-        <MapView/>
+        {/* TODO: add review cards */}
+        <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+          
+          <EuiFlexGrid columns={2}>
+            {/* <div>
+              {reviews.map(review =>
+                <ReviewCard/>
+              )}
+            </div> */}
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+          </EuiFlexGrid>
 
-      </EuiPageContentBody>
-    </EuiPageBody>
-  </EuiPage>
-);
+          <MapView/>
+
+        </EuiPageContentBody>
+      </EuiPageBody>
+    </EuiPage>
+)};
 
 export default RestaurantPage;

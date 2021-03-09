@@ -10,6 +10,17 @@ export const getRestaurants = async (req, res) => {
     }
 }
 
+export const getRestaurant = async (req, res) => {
+    try {
+        // edit line below
+        const restaurant = await Restaurant.find({ business_id: req.params.restaurantId });
+
+        res.status(200).json(restaurant);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
 export const createRestaurant = async (req, res) => {
     console.log(req.body);
     const restaurantInfo = req.body;

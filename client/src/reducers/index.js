@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 
-import posts from './posts';
+import restaurant from './restaurants';
 
-export default combineReducers({ posts });
+export default combineReducers({ restaurant });
