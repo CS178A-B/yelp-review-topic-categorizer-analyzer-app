@@ -13,11 +13,12 @@
 }
 
 .landing-feature {
+  min-height: 95vh;
   display:flex;
   flex-direction:column;
-  height: 96vh;
   justify-content: center;
   align-items: center;
+  padding-bottom: 15vh;
 }
 
 .landing-title {
