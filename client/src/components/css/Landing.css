@@ -9,8 +9,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
   justify-content: center;
+}
+
+.landing-feature {
+  display:flex;
+  flex-direction:column;
+  height: 96vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .landing-title {
@@ -27,4 +34,8 @@
 
   font-size: 3.0em;
   font-family: Blippo, fantasy;
+}
+
+.landing-content {
+  width: 60vw;
 }
