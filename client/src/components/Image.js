@@ -1,11 +1,12 @@
 import React from "react";
 import { EuiImage } from '@elastic/eui';
 
-export function imageLink() {
+export function imageLink(value) {
     return(
         <EuiImage
-        src="https://source.unsplash.com/100x100/?Nature"
-        alt="image_alt"
+            size={150}
+            src={value}
+            alt="image_alt"
         />
     )
 }
