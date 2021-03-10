@@ -1,9 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { starsRender } from './Stars/StarsRender.js';
-import ReviewCard from './ReviewCard.js'
-import MapView from './MapView.js'
-import { getRestaurant, getRestaurants } from '../actions/restaurants.js';
+import ReviewCard from './ReviewCard.js';
+import MapView from './MapView.js';
 
 import {
   EuiPage,
@@ -26,46 +24,75 @@ export const Restaurant = {
   business_id: "WCei-r9iAqxEIFX40zOebA",
 }
 
-function RestaurantPage({ button = <></>, match }) {
-  const dispatch = useDispatch();
-  dispatch(getRestaurant(match.params.id));
-  const restaurant = useSelector((state) => state.restaurant);
-  // console.log(restaurant[0]);
+export default class RestaurantPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      restaurant: {},
+      reviews: []
+    }
+  }
 
-  // if(restaurant[0] === undefined) {
-  //   console.log(restaurant);
-  // }
-  // console.log(match.params.id);
-  return (
-    <EuiPage paddingSize="none">
-      <EuiPageBody>
-        <EuiPageHeader
-          pageTitle={restaurant.name}
-          description={"Overall Rating: " + restaurant.stars}
-          rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
-          paddingSize="l"
-        />
+  componentDidMount() {
+    fetch(`http://localhost:5000/restaurant/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            restaurant: result[0]
+          });
+        }
+      );
+    fetch(`http://localhost:5000/reviews/${this.props.match.params.id}`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          reviews: result
+        });
+      }
+    );
+  }
 
-        {/* TODO: add review cards */}
-        <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
-          
-          <EuiFlexGrid columns={2}>
-            {/* <div>
-              {reviews.map(review =>
-                <ReviewCard/>
-              )}
-            </div> */}
-            <ReviewCard/>
-            <ReviewCard/>
-            <ReviewCard/>
-            <ReviewCard/>
-          </EuiFlexGrid>
-
-          <MapView/>
-
-        </EuiPageContentBody>
-      </EuiPageBody>
-    </EuiPage>
-)};
-
-export default RestaurantPage;
+  render() {
+    // This needs to be fixed
+    const button = <></>;
+    // This contains the restaurant info based on the restaurant's id
+    const restaurant = this.state.restaurant;
+    // This contains the restaurant's reviews (in array format) based on the restaurant's id
+    const reviews = this.state.reviews;
+    console.log(restaurant);
+    console.log(reviews);
+    return (
+      <EuiPage paddingSize="none">
+        <EuiPageBody>
+          <EuiPageHeader
+            pageTitle={restaurant.name}
+            description={"Overall Rating: " + restaurant.stars}
+            rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
+            paddingSize="l"
+          />
+  
+          {/* TODO: add review cards */}
+          <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+            
+            <EuiFlexGrid columns={2}>
+              {/* <div>
+                {reviews.map(review =>
+                  <ReviewCard/>
+                )}
+              </div> */}
+              <ReviewCard/>
+              <ReviewCard/>
+              <ReviewCard/>
+              <ReviewCard/>
+            </EuiFlexGrid>
+  
+            <MapView/>
+  
+          </EuiPageContentBody>
+        </EuiPageBody>
+      </EuiPage>
+    );
+  }
+};

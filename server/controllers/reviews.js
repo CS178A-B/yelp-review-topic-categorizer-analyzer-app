@@ -2,7 +2,7 @@ import Review from '../models/review.js';
 
 export const getReviews = async (req, res) => {
     try {
-        const reviews = await Review.find();
+        const reviews = await Review.find({ business_id: req.params.restaurantId });
 
         res.status(200).json(reviews);
     } catch (error) {

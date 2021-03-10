@@ -58,7 +58,7 @@ const Nav = () => {
           onClick={() => onSelectedTabChanged(tab.id)}
           isSelected={tab.id === selectedTabId}
           disabled={tab.disabled}
-          key={index}>
+          key={tab.id}>
           {tab.name}  
         </EuiTab>
       </Link>
