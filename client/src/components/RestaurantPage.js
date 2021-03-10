@@ -61,8 +61,12 @@ export default class RestaurantPage extends React.Component {
     const restaurant = this.state.restaurant;
     // This contains the restaurant's reviews (in array format) based on the restaurant's id
     const reviews = this.state.reviews;
-    console.log(restaurant);
-    console.log(reviews);
+
+    let reviewList = [];
+    reviews.forEach((item)=>{
+      reviewList.push(<ReviewCard key={item.id} review={item} />);
+    });
+
     return (
       <EuiPage paddingSize="none">
         <EuiPageBody>
@@ -77,15 +81,18 @@ export default class RestaurantPage extends React.Component {
           <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
             
             <EuiFlexGrid columns={2}>
+              <div>
+                {reviewList}
+              </div>
               {/* <div>
                 {reviews.map(review =>
                   <ReviewCard/>
                 )}
               </div> */}
+              {/* <ReviewCard/>
               <ReviewCard/>
               <ReviewCard/>
-              <ReviewCard/>
-              <ReviewCard/>
+              <ReviewCard/> */}
             </EuiFlexGrid>
   
             <MapView/>
