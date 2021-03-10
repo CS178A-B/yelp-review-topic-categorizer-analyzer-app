@@ -20,19 +20,19 @@ export default ({ result }) => (
       </ul>
       <ul className="sui-result__details">
         <li>
-          <span className="sui-result__key">Overall Rating</span>{" "}
+        <span>Overall Rating: </span>
           <span className="sui-result__value">{starsRender(result.stars.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Food</span>{}
+        <span>Food: </span>
           <span className="sui-result__value">{starsRender(result.food.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Ambience</span>{" "}
+          <span>Ambience: </span>
           <span className="sui-result__value">{starsRender(result.ambience.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Service</span>{" "}
+        <span>Service: </span>
           <span className="sui-result__value">{starsRender(result.service.raw)}</span>
         </li>
       </ul>
