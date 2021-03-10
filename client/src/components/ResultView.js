@@ -1,6 +1,7 @@
 import React from "react";
 import { starsRender } from './Stars/StarsRender.js';
 import './ResultView.css'
+import { imageLink } from './Image.js'
 
 export default ({ result }) => (
   
@@ -15,12 +16,15 @@ export default ({ result }) => (
     </div>
     <div className="sui-result__body">
       <ul className="sui-result__details">
+        {imageLink(result.image_url.raw)}
+      </ul>
+      <ul className="sui-result__details">
         <li>
           <span className="sui-result__key">Overall Rating</span>{" "}
           <span className="sui-result__value">{starsRender(result.stars.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Food</span>{" "}
+          <span className="sui-result__key">Food</span>{}
           <span className="sui-result__value">{starsRender(result.food.raw)}</span>
         </li>
         <li>
