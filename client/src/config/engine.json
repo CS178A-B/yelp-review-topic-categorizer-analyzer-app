@@ -1,26 +1,17 @@
 {
-  "engineName": "review-engine",
-  "endpointBase": "https://a176897abefc4b55bb2009439ba4da2b.ent-search.us-west-1.aws.cloud.es.io",
-  "searchKey": "search-moz1i46atwst63excwvc9xki",
+  "engineName": "yelprestaurants",
+  "endpointBase": "https://dc95c1f101cc40278ed1edc7f9db3f4e.ent-search.us-central1.gcp.cloud.es.io",
+  "searchKey": "search-d21pnsiumm9tjbyg9o8ms16e",
   "resultFields": [
     "address",
     "city",
+    "image_url",
     "latitude",
-    "description",
     "stars",
-    "title",
-    "nps_link",
     "food",
-    "states",
-    "visitors",
-    "square_km",
-    "world_heritage_site",
-    "date_established",
     "ambience",
     "service",
     "name",
-    "location",
-    "acres",
     "state",
     "categories",
     "postal_code",
@@ -30,13 +21,14 @@
   ],
   "sortFields": [
     "stars",
-    "food",
     "ambience",
-    "service"
+    "service",
+    "food"
   ],
   "facets": [
-    "categories"
+    "categories",
+    "state"
   ],
   "titleField": "name",
-  "urlField": "description"
+  "urlField": "business_id"
 }

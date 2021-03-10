@@ -31,6 +31,10 @@ export default ({ result }) => (
           <span className="sui-result__key">Service</span>{" "}
           <span className="sui-result__value">{starsRender(result.service.raw)}</span>
         </li>
+        <li>
+          <span className="sui-result__key">Image_URL</span>{" "}
+          <span className="sui-result__value">{result.image_url.raw}</span>
+        </li>
       </ul>
     </div>
   </li>
