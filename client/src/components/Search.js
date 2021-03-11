@@ -1,7 +1,6 @@
 import React from "react";
 import ResultView from "./ResultView.js";
 
-
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
 import {

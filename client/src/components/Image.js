@@ -8,6 +8,7 @@ export function imageLink(value) {
             src={value}
             alt="image_alt"
             hasShadow={true}
+            class="restaurant-image"
         />
     )
 }
