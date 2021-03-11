@@ -1,5 +1,6 @@
 import React from 'react';
 import { starsRender } from './Stars/StarsRender.js';
+import GoogleMapReact from 'google-map-react';
 import ReviewCard from './ReviewCard.js';
 import MapView from './MapView.js';
 import './css/Pages.css';
@@ -15,6 +16,41 @@ import {
   EuiPageContent,
   EuiSpacer,
 } from '@elastic/eui';
+
+const WIDTH = 20;
+const HEIGHT = 20;
+
+var restaurant_name;
+
+const markerStyle = {
+  position: 'absolute',
+  borderRadius: '50%',
+  border: '5px solid #c41200',
+  backgroundColor: 'white',
+  width: WIDTH,
+  height: HEIGHT,
+  left: -WIDTH / 2,
+  top: -HEIGHT / 2, 
+};
+
+const textStyle = {
+    paddingLeft: WIDTH,
+    whiteSpace: 'nowrap',
+    textAlign: 'center',
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: '1.2em',
+}
+
+const Marker = () => <div style={markerStyle}><div style={textStyle}>{restaurant_name}</div></div>;
+
+function undefinedHandler(value) {
+  console.log(value)
+  if (typeof(value) == "undefined") {
+    return 0.0
+  }
+  return value
+}
 
 export default class RestaurantPage extends React.Component {
   constructor(props) {
@@ -46,21 +82,27 @@ export default class RestaurantPage extends React.Component {
     );
   }
 
+    static defaultProps = {
+      zoom: 10,
+    } 
+
   render() {
     // This needs to be fixed
     const button = <></>;
     // This contains the restaurant info based on the restaurant's id
     const restaurant = this.state.restaurant;
-    export default Restaurant = restaurant;
+    restaurant_name = restaurant.name
     // This contains the restaurant's reviews (in array format) based on the restaurant's id
     const reviews = this.state.reviews;
 
     let reviewList = [];
     reviews.forEach((item)=>{
       reviewList.push(<ReviewCard key={item.id} review={item} />);
+
     });
 
     return (
+      <div>
       <EuiPage paddingSize="none" class="app-body">
 
             <div class="landing-feature page-content">
@@ -102,12 +144,25 @@ export default class RestaurantPage extends React.Component {
                             }
                         />
                     </div>
-                    <MapView/>
                     </EuiPageContent>
                 </EuiPageBody>
             </div>
 
       </EuiPage>
+        <div style={{ height: '60vh', width: '100%', padding: '3%'}}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: process.env.MAPS_API }}
+          defaultZoom={this.props.zoom}
+          center={[undefinedHandler(restaurant.latitude), undefinedHandler(restaurant.longitude)]}
+        >
+          <Marker
+            lat={undefinedHandler(restaurant.latitude)}
+            lng={undefinedHandler(restaurant.longitude)}
+          />
+        </GoogleMapReact>
+      </div>
+      </div>
+
     );
   }
 };
