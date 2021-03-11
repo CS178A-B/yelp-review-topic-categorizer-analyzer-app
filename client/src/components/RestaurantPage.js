@@ -2,6 +2,7 @@ import React from 'react';
 import { starsRender } from './Stars/StarsRender.js';
 import ReviewCard from './ReviewCard.js';
 import MapView from './MapView.js';
+import './css/Pages.css';
 
 import {
   EuiPage,
@@ -10,6 +11,9 @@ import {
   EuiPageContentBody,
   EuiPageBody,
   EuiFlexGrid,
+  EuiEmptyPrompt,
+  EuiPageContent,
+  EuiSpacer,
 } from '@elastic/eui';
 
 // TODO: create and initialize Restaurant object according to clicked result
@@ -68,37 +72,62 @@ export default class RestaurantPage extends React.Component {
     });
 
     return (
-      <EuiPage paddingSize="none">
-        <EuiPageBody>
-          <EuiPageHeader
-            pageTitle={restaurant.name}
-            description={"Overall Rating: " + restaurant.stars}
-            rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
-            paddingSize="l"
-          />
-  
-          {/* TODO: add review cards */}
-          <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
-            
-            <EuiFlexGrid columns={2}>
-              <div>
-                {reviewList}
-              </div>
-              {/* <div>
-                {reviews.map(review =>
-                  <ReviewCard/>
-                )}
-              </div> */}
-              {/* <ReviewCard/>
-              <ReviewCard/>
-              <ReviewCard/>
-              <ReviewCard/> */}
-            </EuiFlexGrid>
-  
-            <MapView/>
-  
-          </EuiPageContentBody>
-        </EuiPageBody>
+      <EuiPage paddingSize="none" class="app-body">
+
+            <div class="landing-feature page-content">
+
+              <EuiSpacer/>
+              <EuiSpacer/>
+
+                <EuiPageBody paddingSize="1">
+                    <EuiPageContent
+                    verticalPosition="center"
+                    horizontalPosition="center"
+                    paddingSize="none">
+
+                        <div class="page-content">
+
+                        <EuiEmptyPrompt
+                            title={<h2><span class="underline--magical">{restaurant.name}</span></h2>}
+                            titleSize="l"
+                            body={
+                            <React.Fragment>
+                                <EuiPageHeader
+                                  description={"Overall Rating: " + restaurant.stars}
+                                  rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
+                                  paddingSize="l"
+                                />
+                        
+                                {/* TODO: add review cards */}
+                                <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+                                  
+                                  <EuiFlexGrid columns={2}>
+                                    <div>
+                                      {reviewList}
+                                    </div>
+                                    {/* <div>
+                                      {reviews.map(review =>
+                                        <ReviewCard/>
+                                      )}
+                                    </div> */}
+                                    {/* <ReviewCard/>
+                                    <ReviewCard/>
+                                    <ReviewCard/>
+                                    <ReviewCard/> */}
+                                  </EuiFlexGrid>
+                        
+                                  
+                                </EuiPageContentBody>
+
+                            </React.Fragment>
+                            }
+                        />
+                    </div>
+                    <MapView/>
+                    </EuiPageContent>
+                </EuiPageBody>
+            </div>
+
       </EuiPage>
     );
   }

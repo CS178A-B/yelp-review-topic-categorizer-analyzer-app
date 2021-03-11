@@ -6,21 +6,19 @@ import {
     EuiPageContent,
     EuiEmptyPrompt,
     EuiPageBody,
-    EuiTitle,
-    EuiSpacer,
     EuiButton,
   } from '@elastic/eui';
 
-import './css/Landing.css';
+import './css/Pages.css';
 import About from './About.js'
 
 const Landing = ({ button = <></>, content }) => {
     return (
 
             <React.Fragment>
-                    <EuiPage paddingSize="none" class="landing-body">
+                    <EuiPage paddingSize="none" class="app-body">
 
-                        <div class="landing-feature">
+                        <div class="landing-feature page-content">
 
                         <style>
                           @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
@@ -34,7 +32,7 @@ const Landing = ({ button = <></>, content }) => {
                                 horizontalPosition="center"
                                 paddingSize="none">
 
-                                    <div class="landing-content">
+                                    <div>
 
                                     <EuiEmptyPrompt
                                         iconType="discoverApp"
