@@ -14,6 +14,7 @@ export default class ReviewCard extends React.Component {
         const review = this.props.review;
         const { showing } = this.state;
         return (
+            <div>
             <EuiFlexItem>
                 <EuiCard
                     textAlign="left"
@@ -40,6 +41,8 @@ export default class ReviewCard extends React.Component {
             </EuiCard>
             {/* < Example /> */}
         </EuiFlexItem>
+        <br></br>
+        </div>
         );
     }
 }
