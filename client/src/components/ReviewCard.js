@@ -1,5 +1,6 @@
 import React from 'react';
 import { starsRender } from './Stars/StarsRender.js';
+import './css/ReviewCard.css'
 
 import {
     EuiFlexItem,
@@ -17,6 +18,7 @@ export default class ReviewCard extends React.Component {
                 <EuiCard
                     textAlign="left"
                     title={"Overall Rating: " + review.stars + "/5"}
+                    
                 >
                 <EuiText size="s">
                     <ul>
