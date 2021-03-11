@@ -1,5 +1,4 @@
 import React from 'react';
-import { starsRender } from './Stars/StarsRender.js';
 import ReviewCard from './ReviewCard.js';
 import MapView from './MapView.js';
 import './css/Pages.css';
@@ -47,7 +46,6 @@ export default class RestaurantPage extends React.Component {
   }
 
   render() {
-    // This needs to be fixed
     const button = <></>;
     // This contains the restaurant info based on the restaurant's id
     const restaurant = this.state.restaurant;
@@ -61,7 +59,6 @@ export default class RestaurantPage extends React.Component {
     });
  
     function mapComponent() {
-      console.log("it entered here")
       let mapComponent;
       if(restaurant.name === undefined) {
         mapComponent = <div><h1>Loading</h1></div>

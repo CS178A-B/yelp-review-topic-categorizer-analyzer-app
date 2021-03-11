@@ -34,23 +34,12 @@ class MapView extends Component {
   
     render() {
       const restaurant = this.props;
-      console.log(restaurant);
-
-      function undefinedHandler(value) {
-        console.log(value)
-        if (typeof(value) == "undefined") {
-          return 0.0
-        }
-        return value
-      }
-
-      undefinedHandler(restaurant);
 
       const Marker = () => <div style={markerStyle}><div style={textStyle}>{restaurant.name}</div></div>;
       return (
         <div style={{ height: '60vh', width: '100%', padding: '0'}}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: process.env.MAPS_API }}
+            bootstrapURLKeys={{ key: "AIzaSyDzHP_MAk5Kq9u_eW5zuoBDvPd1GEfjWKY" }}
             defaultZoom={10}
             center={[parseInt(restaurant.lat), parseInt(restaurant.lng)]}
           >
