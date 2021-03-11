@@ -17,8 +17,9 @@ import {
     WithSearch
   } from "@elastic/react-search-ui";
 import { Layout } from "@elastic/react-search-ui-views";
+
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
-import './css/Landing.css'
+import './css/Pages.css'
 
 import {
     buildAutocompleteQueryConfig,
@@ -54,8 +55,8 @@ const Search = () => {
             <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                 {({ wasSearched }) => {
                 return (
-                    <div class="landing-body">
-                    <div className="App">
+                    <div class="app-body">
+                    <div className="App" class="page-content">
                     <ErrorBoundary>
                         
                         <Layout

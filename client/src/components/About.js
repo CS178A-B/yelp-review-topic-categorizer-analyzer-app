@@ -3,10 +3,12 @@ import React, { Fragment } from 'react';
 import {
   EuiIcon,
   EuiTabbedContent,
-  EuiTitle,
   EuiText,
   EuiSpacer,
+  EuiButton,
 } from '@elastic/eui';
+
+import './css/Pages.css';
 
 export default () => {
   const tabs = [
@@ -15,16 +17,10 @@ export default () => {
       name: 'How It Works',
       content: (
         <Fragment>
-          <EuiTitle>
-            <h3>How It Works</h3>
-          </EuiTitle>
-          <EuiSpacer />
+          <EuiSpacer/>
           <EuiText>
-              The Yelp Review Topic Categorizer and Analyzer comes up with an empyrical analysis of Yelp Reviews
-              and helps you choose which restaurants to eat at based on scores of different topics and helps you choose which
-              restaurants to eat at based on scores of different topics. To begin using
-              this application, start by clicking 'Search Restaurants'. There, you can search up restaurants and receive
-              results based off overall rating, food, ambience and service.
+              The <b>Yelp Review Topic Categorizer & Analyzer</b> is an app that uses machine learning technology to categorize and analyze the sentiments of Yelp Reviews to determine the strengths of a restaurant. The app comes up with an empirical analysis of Yelp Reviews
+              to help you choose which restaurants to eat at, based on scores of different topics.
           </EuiText>
           <EuiSpacer />
         </Fragment>
@@ -35,18 +31,30 @@ export default () => {
       name: 'About The Team',
       content: (
         <Fragment>
-          <EuiTitle>
-            <h3>About The Team</h3>
-          </EuiTitle>
-          <EuiSpacer />
+          <EuiSpacer/>
           <EuiText>
-            This application was created by Team Cool, a senior design team for CS 178B. The team consists of 4 members
-            - Andrew Chen, Timothy Koo, Mina delos Santos and Giuseppi Pelayo. All 4 members are currently seniors,
-            with Mina studying Computer Engineering while Andrew, Timothy and Giuseppi are studying Computer Science. We
-            combined our love for food, curiosity, and shared problems with Yelp to create an application that provides
-            easy-to-read scores based off different topics to easily narrow down dinning preferences.
+            Hey, we're <b>Team Cool!</b> We're a team of 4 Computer Science students from UCR--Andrew Chen, Timothy Koo, Mina delos Santos and Giuseppi Pelayo. Combining our love for food and computer science, we want to help you choose the best restaurant to eat at. We hope that our app makes those <em>"Where do you want to eat?"</em> moments easier.
           </EuiText>
-          <EuiSpacer />
+          <EuiSpacer/>
+        </Fragment>
+      ),
+    },
+    {
+      id: 'repo--id',
+      name: 'Code',
+      content: (
+        <Fragment>
+          <EuiSpacer/>
+          <EuiText>
+            Check out the project <b>GitHub Repository</b>, and give the app a try!
+          </EuiText>
+          <EuiSpacer/>
+            <a href="https://github.com/CS178A-B/final-project-cool-team" target="_blank">
+                <EuiButton size="s" color="primary" fill={false} iconType="logoGithub">
+                  npm start
+                </EuiButton>
+            </a>
+          <EuiSpacer/>
         </Fragment>
       ),
     },

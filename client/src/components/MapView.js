@@ -35,7 +35,7 @@ class MapView extends Component {
   
     render() {
       return (
-        <div style={{ height: '50vh', width: '100%', padding: '3%'}}>
+        <div style={{ height: '60vh', width: '100%', padding: '3%'}}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: process.env.MAPS_API }}
             defaultZoom={this.props.zoom}

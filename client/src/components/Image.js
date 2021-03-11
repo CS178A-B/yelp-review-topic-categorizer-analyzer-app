@@ -4,9 +4,10 @@ import { EuiImage } from '@elastic/eui';
 export function imageLink(value) {
     return(
         <EuiImage
-            size={180}
+            size={"s"}
             src={value}
             alt="image_alt"
+            hasShadow={true}
         />
     )
 }

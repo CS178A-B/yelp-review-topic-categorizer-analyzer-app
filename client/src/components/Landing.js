@@ -6,40 +6,39 @@ import {
     EuiPageContent,
     EuiEmptyPrompt,
     EuiPageBody,
-    EuiTitle,
-    EuiSpacer,
     EuiButton,
+    EuiSpacer
   } from '@elastic/eui';
 
-import './css/Landing.css';
+import './css/Pages.css';
 import About from './About.js'
 
 const Landing = ({ button = <></>, content }) => {
     return (
 
             <React.Fragment>
-                    <EuiPage paddingSize="none" class="landing-body">
+                    <EuiPage paddingSize="none" class="app-body">
 
                         <div class="landing-feature">
 
                         <style>
-                          @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
-                        </style>
+                            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+                        </style> 
 
-                        <h1 class="landing-title">Yelp Review Topic Categorizer & Analyzer</h1>
+                        <h1> <span class="landing-title underline--magical--title"> yelp review topic categorizer & analyzer </span> </h1>
 
                             <EuiPageBody paddingSize="1">
                                 <EuiPageContent
                                 verticalPosition="center"
                                 horizontalPosition="center"
-                                paddingSize="none">
+                                paddingSize="l">
 
-                                    <div class="landing-content">
+                                    <div class="page-content">
 
                                     <EuiEmptyPrompt
                                         iconType="discoverApp"
                                         iconColor={null}
-                                        title={<h2>Find your <span class="underline--magical">eating experience</span>.</h2>}
+                                        title={<h3>Find your <span class="underline--magical">eating experience</span>.</h3>}
                                         titleSize="l"
                                         body={
                                         <React.Fragment>
@@ -47,10 +46,8 @@ const Landing = ({ button = <></>, content }) => {
                                             Each restaurant has that eating experience they're known for. It could be their mouth-watering food, their Instagram-worthy ambience, or friendly service that makes you want to come back for more.
                                             </p>
 
-                                            <p>
-                                                The <span class="underline--magical">Yelp Review Topic Categorizer & Analyzer</span> uses machine learning technology to categorize and analyze the sentiments of Yelp Reviews to determine the strengths of a restaurant.
-                                            </p>
-
+                                            
+                                            
                                             <p>Narrow down your dining preferences to find the perfect place for you!</p>
 
                                         </React.Fragment>
@@ -61,10 +58,42 @@ const Landing = ({ button = <></>, content }) => {
                                                 Search Restaurants
                                             </EuiButton>
                                         </Link>
+
+                                        
                                         }
                                     />
 
-                                    <About/>
+                                </div>
+
+                                </EuiPageContent>
+
+                                <EuiSpacer/>
+                                <EuiSpacer/>
+                                <EuiSpacer/>
+                                <EuiSpacer/>
+                                <EuiSpacer/>
+                                <EuiSpacer/>
+
+                                <EuiPageContent
+                                verticalPosition="center"
+                                horizontalPosition="center"
+                                paddingSize="l">
+
+                                    <div class="page-content">
+
+                                    <EuiEmptyPrompt
+                                        iconType={"managementApp"}
+                                        iconColor={null}
+                                        title={<h3>Behind <span class="underline--magical">the scenes</span>.</h3>}
+                                        titleSize="l"
+                                        body={
+                                        <React.Fragment>
+                                            <About/>
+                                        </React.Fragment>
+                                        }
+                                    />
+
+                                
                                 </div>
 
                                 </EuiPageContent>
