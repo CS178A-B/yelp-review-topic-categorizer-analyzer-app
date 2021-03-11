@@ -26,9 +26,9 @@
 }
 
 .landing-title {
-  color: white;
-    -webkit-text-stroke-width: 2.5px;
-  -webkit-text-stroke-color: rgb(25, 58, 78);
+  color: rgb(25, 58, 78);
+    -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
   text-shadow: 3px 3px 5px white;
 
   display: flex;
