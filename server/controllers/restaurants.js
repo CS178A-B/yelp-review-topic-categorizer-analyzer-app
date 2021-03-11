@@ -1,10 +1,22 @@
 import Restaurant from '../models/restaurant.js';
+import mongoose from 'mongoose';
 
 export const getRestaurants = async (req, res) => {
     try {
         const restaurants = await Restaurant.find();
 
         res.status(200).json(restaurants);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const getRestaurant = async (req, res) => {
+    try {
+        // edit line below
+        const restaurant = await Restaurant.find({ business_id: req.params.restaurantId });
+
+        res.status(200).json(restaurant);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

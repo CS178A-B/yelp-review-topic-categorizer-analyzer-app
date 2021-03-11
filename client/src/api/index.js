@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/posts';
+const url = 'http://localhost:5000/restaurant';
 
 // rename this later
-export const fetchPosts = () => axios.get(url);
+export const fetchRestaurants = () => axios.get(url);
+export const fetchRestaurant = (restaurantId) => axios.get(`${url}/${restaurantId}`);
