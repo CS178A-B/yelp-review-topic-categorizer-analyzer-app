@@ -1,6 +1,7 @@
 import React from "react";
 import ResultView from "./ResultView.js";
 
+
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 
 import {
@@ -17,6 +18,7 @@ import {
   } from "@elastic/react-search-ui";
 import { Layout } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
+import './css/Landing.css'
 
 import {
     buildAutocompleteQueryConfig,
@@ -52,18 +54,20 @@ const Search = () => {
             <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                 {({ wasSearched }) => {
                 return (
+                    <div class="landing-body">
                     <div className="App">
                     <ErrorBoundary>
+                        
                         <Layout
                         header={<SearchBox autocompleteSuggestions={true} />}
                         sideContent={
                             <div>
-                            {wasSearched && (
+                            {/* {wasSearched && (
                                 <Sorting
                                 label={"Sort by"}
                                 sortOptions={buildSortOptionsFromConfig()}
                                 />
-                            )}
+                            )} */}
                             {getFacetFields().map(field => (
                                 <Facet key={field} field={field} label={field} />
                             ))}
@@ -86,6 +90,7 @@ const Search = () => {
                         bodyFooter={<Paging />}
                         />
                     </ErrorBoundary>
+                    </div>
                     </div>
                 );
                 }}

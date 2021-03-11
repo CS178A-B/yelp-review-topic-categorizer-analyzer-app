@@ -13,10 +13,9 @@ const restaurantSchema = mongoose.Schema({
     categories: String,
     ambience: String,
     service: String,
-    food: String
+    food: String,
+    image_url: String
 });
-
-// const restaurantSchema = mongoose.Schema({}, {strict: false});
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema, 'newyork_restaurants');
 

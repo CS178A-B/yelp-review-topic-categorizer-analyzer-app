@@ -1,19 +1,28 @@
 import React from "react";
+import RestaurantPage from './RestaurantPage';
 import { starsRender } from './Stars/StarsRender.js';
 import './ResultView.css'
-import { imageLink } from './Image.js'
+import { imageLink } from './Image.js';
+import { Link } from 'react-router-dom';
 
-export default ({ result }) => (
+
+const ResultView = ({ result }) => (
+  <React.Fragment>
   
   <li className="sui-result">
-    <div className="sui-result__header">
-      <span
-        className="sui-result__title"
-        // Snippeted results contain search term highlights with html and are
-        // 100% safe and santitized, so we dangerously set them here
-        dangerouslySetInnerHTML={{ __html: result.name.snippet }}
-      />
-    </div>
+  <Link to={`/restaurant/${result.business_id.raw}`}>
+    
+      <div className="sui-result__header">
+      
+          <span
+            className="sui-result__title"
+            // Snippeted results contain search term highlights with html and are
+            // 100% safe and santitized, so we dangerously set them here
+            dangerouslySetInnerHTML={{ __html: result.name.snippet }}
+          />
+        
+      </div>
+    
     <div className="sui-result__body">
       <ul className="sui-result__details">
         {imageLink(result.image_url.raw)}
@@ -37,5 +46,10 @@ export default ({ result }) => (
         </li>
       </ul>
     </div>
+    </Link>
   </li>
+  
+  </React.Fragment>
 );
+
+export default ResultView;
