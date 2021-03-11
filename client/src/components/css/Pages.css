@@ -27,7 +27,7 @@
 
 .landing-title {
   color: rgb(25, 58, 78);
-    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
   text-shadow: 3px 3px 5px white;
 
@@ -41,6 +41,10 @@
   
   margin-top: 40vh;
   margin-bottom: 45vh;
+
+  background-image: linear-gradient(120deg, #ceeef1 0%, #add2eb 100%);
+  background-size: 100% 12%;
+  background-repeat: no-repeat;
 }
 
 .underline--magical {
@@ -53,12 +57,4 @@
 
 .underline--magical:hover {
   background-size: 100% 88%;
-}
-
-.underline--magical--title {
-  background-image: linear-gradient(120deg, #ceeef1 0%, #add2eb 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 88%;
-  background-position: 0 88%;
-  transition: background-image 0.25s ease-in;
 }
