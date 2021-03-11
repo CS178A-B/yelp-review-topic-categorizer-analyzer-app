@@ -29,9 +29,7 @@ The Yelp Review Topic Categorizer and Analyzer does the following:
 
 
 ## Usage
-Demo: https://youtu.be/dsYeiRCCzcc
-
-<Screenshot of application>
+Deployed Application: https://unruffled-poitras-2bf943.netlify.app/
 
 ## How To Run
 
@@ -39,7 +37,7 @@ To be able to run this application, please clone this repository. After that, yo
 
 In order for the Google Maps API to show the location of the restaurant, initialize your key in **[client/app-env](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/app-env)** by replacing `YOUR_MAPS_API_KEY` with your own key.
 
-To run the client side in one terminal, change directories into **[client](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/)**. After that, run `npm install`, then run `npm start`.
+To run the client side in one terminal, change directories into **[client](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/)**. After that, run `npm install`, then run `npm start`. You may have to run `npm audit fix` to fix any dependency errors.
 
 To run the server side in another terminal, change directories into **[server](https://github.com/CS178A-B/final-project-cool-team/blob/master/client/)**. After that, run `npm install`, then run `npm start`.
 
@@ -54,6 +52,10 @@ This automatically opens [http://localhost:3000](http://localhost:3000) in your 
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `npm audit fix`
+
+Fixes any dependency errors after installation.
 
 ### `npm test`
 
@@ -84,8 +86,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### Sequence Diagrams
 
-![](images/SeqDiag1.png)<br />
-Shown here is one of our sequence diagrams and an example of how our quintessential user, the Foodie, would interact with our service. The overview of this sequence diagram is how a Foodie requests the rank of restaurants based on a specific category, e.g ambience.
+![](images/userFlow.jpg)<br />
+Shown here is one of our sequence diagrams and an example of how our quintessential user, the Foodie, would interact with our service. The overview of this sequence diagram is how a Foodie searches through our database.
 
 ### Frontend Structure
 
