@@ -25,7 +25,7 @@ const Landing = ({ button = <></>, content }) => {
                             @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
                         </style> 
 
-                        <h1> <span class="landing-title underline--magical--title"> yelp review topic categorizer & analyzer </span> </h1>
+                        <h1> <span class="landing-title"> yelp review topic categorizer & analyzer </span> </h1>
 
                             <EuiPageBody paddingSize="1">
                                 <EuiPageContent
