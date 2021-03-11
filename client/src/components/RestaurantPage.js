@@ -16,17 +16,6 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-export const Restaurant = {
-  longitude: -73.444889,
-  latitude: 44.978459,
-  name: "Pizza Plus",
-  stars: "4.5",
-  ambience: "5.0",
-  food: "5.0",
-  service: "0.0",
-  business_id: "WCei-r9iAqxEIFX40zOebA",
-}
-
 export default class RestaurantPage extends React.Component {
   constructor(props) {
     super(props);
@@ -62,6 +51,7 @@ export default class RestaurantPage extends React.Component {
     const button = <></>;
     // This contains the restaurant info based on the restaurant's id
     const restaurant = this.state.restaurant;
+    export default Restaurant = restaurant;
     // This contains the restaurant's reviews (in array format) based on the restaurant's id
     const reviews = this.state.reviews;
 
