@@ -45,10 +45,8 @@ const Landing = ({ button = <></>, content }) => {
                                             Each restaurant has that eating experience they're known for. It could be their mouth-watering food, their Instagram-worthy ambience, or friendly service that makes you want to come back for more.
                                             </p>
 
-                                            <p>
-                                                The <span class="underline--magical">Yelp Review Topic Categorizer & Analyzer</span> uses machine learning technology to categorize and analyze the sentiments of Yelp Reviews to determine the strengths of a restaurant.
-                                            </p>
-
+                                            <About/>
+                                            
                                             <p>Narrow down your dining preferences to find the perfect place for you!</p>
 
                                         </React.Fragment>
@@ -59,10 +57,12 @@ const Landing = ({ button = <></>, content }) => {
                                                 Search Restaurants
                                             </EuiButton>
                                         </Link>
+
+                                        
                                         }
                                     />
 
-                                    <About/>
+                                    
                                 </div>
 
                                 </EuiPageContent>
