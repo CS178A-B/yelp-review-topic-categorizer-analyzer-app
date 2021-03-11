@@ -37,7 +37,7 @@ export default class RestaurantPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:5000/restaurant/${this.props.match.params.id}`)
+    fetch(`https://teamcool-yelp-analyzer.herokuapp.com/restaurant/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -46,7 +46,7 @@ export default class RestaurantPage extends React.Component {
           });
         }
       );
-    fetch(`http://localhost:5000/reviews/${this.props.match.params.id}`)
+    fetch(`https://teamcool-yelp-analyzer.herokuapp.com/reviews/${this.props.match.params.id}`)
     .then(res => res.json())
     .then(
       (result) => {
