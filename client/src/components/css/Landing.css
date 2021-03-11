@@ -3,28 +3,52 @@
   display: flex;
   max-width: 100vw;
 
-  background-image: url('https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  background-image: url('https://images.pexels.com/photos/1024359/pexels-photo-1024359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
   justify-content: center;
+}
+
+.landing-feature {
+  min-height: 95vh;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15vh;
 }
 
 .landing-title {
   color: white;
   font-size: 40px;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 
-  display: block;
+  display: flex;
   text-align: center;
   width: 100%;
   height: 100%;
-  line-height: 10.0em;
+  line-height: 4.0em;
 
   font-size: 3.0em;
-  font-family: Blippo, fantasy;
+  font-family: 'Potta One', cursive;
+}
+
+.landing-content {
+  width: 965px;
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #9be1e9 0%, #509bce 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+
+.underline--magical:hover {
+  background-size: 100% 88%;
 }

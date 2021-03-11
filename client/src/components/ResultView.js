@@ -2,7 +2,6 @@ import React from "react";
 import RestaurantPage from './RestaurantPage';
 import { starsRender } from './Stars/StarsRender.js';
 import './css/ResultView.css'
-
 import { Link } from 'react-router-dom';
 import { imageLink } from './Image.js'
 
