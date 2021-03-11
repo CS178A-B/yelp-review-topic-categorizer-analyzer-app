@@ -2,7 +2,9 @@ import React from "react";
 import RestaurantPage from './RestaurantPage';
 import { starsRender } from './Stars/StarsRender.js';
 import './ResultView.css'
+
 import { Link } from 'react-router-dom';
+import { imageLink } from './Image.js'
 
 
 const ResultView = ({ result }) => (
@@ -24,20 +26,23 @@ const ResultView = ({ result }) => (
     
     <div className="sui-result__body">
       <ul className="sui-result__details">
+        {imageLink(result.image_url.raw)}
+      </ul>
+      <ul className="sui-result__details">
         <li>
-          <span className="sui-result__key">Overall Rating</span>{" "}
+        <span>Overall Rating: </span>
           <span className="sui-result__value">{starsRender(result.stars.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Food</span>{" "}
+        <span>Food: </span>
           <span className="sui-result__value">{starsRender(result.food.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Ambience</span>{" "}
+          <span>Ambience: </span>
           <span className="sui-result__value">{starsRender(result.ambience.raw)}</span>
         </li>
         <li>
-          <span className="sui-result__key">Service</span>{" "}
+        <span>Service: </span>
           <span className="sui-result__value">{starsRender(result.service.raw)}</span>
         </li>
       </ul>
