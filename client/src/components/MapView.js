@@ -37,7 +37,7 @@ class MapView extends Component {
 
       const Marker = () => <div style={markerStyle}><div style={textStyle}>{restaurant.name}</div></div>;
       return (
-        <div style={{ height: '60vh', width: '100%', padding: '0'}}>
+        <div class="map-view">
           <GoogleMapReact
             bootstrapURLKeys={{ key: "AIzaSyDzHP_MAk5Kq9u_eW5zuoBDvPd1GEfjWKY" }}
             defaultZoom={10}
