@@ -51,12 +51,12 @@ alwaysSearchOnInitialLoad: true
 
 const Search = () => {
     return (
-        <SearchProvider config={config} class="app-body">
+        <SearchProvider config={config}>
             <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                 {({ wasSearched }) => {
                 return (
                     <div class="app-body">
-                    <div className="App">
+                    <div className="App" class="page-content">
                     <ErrorBoundary>
                         
                         <Layout
