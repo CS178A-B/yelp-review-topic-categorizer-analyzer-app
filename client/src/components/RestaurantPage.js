@@ -16,7 +16,6 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-// TODO: create and initialize Restaurant object according to clicked result
 export const Restaurant = {
   longitude: -73.444889,
   latitude: 44.978459,
@@ -98,7 +97,6 @@ export default class RestaurantPage extends React.Component {
                                   paddingSize="l"
                                 />
                         
-                                {/* TODO: add review cards */}
                                 <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
                                   
                                   <EuiFlexGrid columns={2}>
@@ -110,10 +108,6 @@ export default class RestaurantPage extends React.Component {
                                         <ReviewCard/>
                                       )}
                                     </div> */}
-                                    {/* <ReviewCard/>
-                                    <ReviewCard/>
-                                    <ReviewCard/>
-                                    <ReviewCard/> */}
                                   </EuiFlexGrid>
                         
                                   
