@@ -85,20 +85,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### Sequence Diagrams
 
 ![](images/SeqDiag1.png)<br />
-Shown here is one of our sequence diagrams and an example of how our quintessential user, the Foodie, would interact with our service. The overview of this sequence diagram is how a Foodie requests the rank of restaurants based on a specific category, e.g ambience. To see how the front-end components look when the above application logic is triggered, see Section 4b of this document under “Results with search criteria.”
-
-![](images/SeqDiag2.png)<br />
-Shown here is the Foodie interacting with our application, requesting the map view, as shown above. See below in section 4b under “Results with map view” to see how the front-end looks when you request the map. Our database includes the coordinates of different restaurants so that we can populate a map with location icons.
+Shown here is one of our sequence diagrams and an example of how our quintessential user, the Foodie, would interact with our service. The overview of this sequence diagram is how a Foodie requests the rank of restaurants based on a specific category, e.g ambience.
 
 ### Frontend Structure
 
-![](images/HiFiPrototype.gif)<br />
-The front-end begins with a landing page with just one search bar where users can type either locations, restaurants, or cuisines. The search backend determines whether the user is identifying either a location, restaurant, or cuisine and gathers the information for the relevant query from the analyzed database. This analyzed database is then displayed in a list which can be sorted by descending star ratings for specific categories. Users can also search on the same page though the search bar above the list.
+![](images/search.jpg)<br />
+The front-end begins with a landing page with an introduction to our application. The search page takes the input and determines whether the user is identifying either a location, restaurant, or cuisine and gathers the information for the relevant query from the analyzed database. This analyzed database is then displayed in a list which can be filtered.
 
 ### Overall System Diagram
 
-![](images/OverallSystemDiagram.png)<br />
-The application begins with the Yelp Review Dataset which contains reviews for restaurants. These reviews go into a database to be cleaned and formatted for data analysis. A small set of these reviews are categorized manually, identifying which categories (food, service, ambience, health/safety) are relevant to the review. The cleaned data and the training model enters Google Cloud’s AutoML Natural Language where it categorizes all of the reviews and uses sentiment analysis to determine the holistic rating for each category per restaurant. 
+![](images/systemDiagram.jpg)<br />
+The application begins with the Yelp Review Dataset which contains reviews for restaurants. These reviews go into a database to be cleaned and formatted for data analysis. A small set of these reviews are categorized manually, identifying which categories (food, service, ambience, health/safety) are relevant to the review. The cleaned data and the training model enters Google Cloud’s AutoML Natural Language where it categorizes all of the reviews and uses sentiment analysis to determine the holistic rating for each category per restaurant. This data is stored in MongoDB and used by the application's Express functions to access specific restaurant information. ElasticSearch creates a clean UI for the search page.
 
 ## Dependencies
 
