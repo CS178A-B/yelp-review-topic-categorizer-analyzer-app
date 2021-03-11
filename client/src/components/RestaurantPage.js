@@ -103,11 +103,6 @@ export default class RestaurantPage extends React.Component {
                                     <div>
                                       {reviewList}
                                     </div>
-                                    {/* <div>
-                                      {reviews.map(review =>
-                                        <ReviewCard/>
-                                      )}
-                                    </div> */}
                                   </EuiFlexGrid>
                         
                                   
