@@ -51,14 +51,26 @@ export default class RestaurantPage extends React.Component {
     const button = <></>;
     // This contains the restaurant info based on the restaurant's id
     const restaurant = this.state.restaurant;
-    export default Restaurant = restaurant;
     // This contains the restaurant's reviews (in array format) based on the restaurant's id
     const reviews = this.state.reviews;
 
     let reviewList = [];
     reviews.forEach((item)=>{
       reviewList.push(<ReviewCard key={item.id} review={item} />);
+      reviewList.push(<EuiSpacer/>);
     });
+ 
+    function mapComponent() {
+      console.log("it entered here")
+      let mapComponent;
+      if(restaurant.name === undefined) {
+        mapComponent = <div><h1>Loading</h1></div>
+      }
+      else {
+        mapComponent = <MapView name={restaurant.name} lat={restaurant.latitude} lng={restaurant.longitude} />
+      }
+      return mapComponent;
+    } 
 
     return (
       <EuiPage paddingSize="none" class="app-body">
@@ -86,8 +98,10 @@ export default class RestaurantPage extends React.Component {
                                   rightSideItems={[button, <EuiButton target={"_blank"} href={"https://www.yelp.com/biz/" + restaurant.business_id}>Yelp Page</EuiButton>]}
                                   paddingSize="l"
                                 />
-                        
                                 <EuiPageContentBody paddingSize="l" style={{ paddingTop: 0 }}>
+
+                                  {mapComponent()}
+                                  <EuiSpacer/>
                                   
                                   <EuiFlexGrid columns={2}>
                                     <div>
@@ -102,7 +116,6 @@ export default class RestaurantPage extends React.Component {
                             }
                         />
                     </div>
-                    <MapView/>
                     </EuiPageContent>
                 </EuiPageBody>
             </div>

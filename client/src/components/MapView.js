@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { Restaurant } from './RestaurantPage.js';
 
 const WIDTH = 20;
 const HEIGHT = 20;
@@ -25,7 +24,7 @@ const textStyle = {
     fontSize: '1.2em',
 }
 
-const Marker = () => <div style={markerStyle}><div style={textStyle}>{Restaurant.name}</div></div>;
+
 
 class MapView extends Component {
 
@@ -34,16 +33,30 @@ class MapView extends Component {
      }
   
     render() {
+      const restaurant = this.props;
+      console.log(restaurant);
+
+      function undefinedHandler(value) {
+        console.log(value)
+        if (typeof(value) == "undefined") {
+          return 0.0
+        }
+        return value
+      }
+
+      undefinedHandler(restaurant);
+
+      const Marker = () => <div style={markerStyle}><div style={textStyle}>{restaurant.name}</div></div>;
       return (
-        <div style={{ height: '60vh', width: '100%', padding: '3%'}}>
+        <div style={{ height: '60vh', width: '100%', padding: '0'}}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: process.env.MAPS_API }}
-            defaultZoom={this.props.zoom}
-            center={[Restaurant.latitude, Restaurant.longitude]}
+            defaultZoom={10}
+            center={[parseInt(restaurant.lat), parseInt(restaurant.lng)]}
           >
             <Marker
-              lat={Restaurant.latitude}
-              lng={Restaurant.longitude}
+              lat={parseInt(restaurant.lat)}
+              lng={parseInt(restaurant.lng)}
             />
           </GoogleMapReact>
         </div>
