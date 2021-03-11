@@ -1,6 +1,6 @@
 # Yelp Review Topic Categorizer and Analyzer
 
-![](images/prototype.jpg)
+![](images/landing.jpg)
 
 ## Table of Contents
 - [Overview](#overview)
