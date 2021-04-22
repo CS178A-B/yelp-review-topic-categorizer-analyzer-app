@@ -94,6 +94,9 @@ Shown here is one of our sequence diagrams and an example of how our quintessent
 ![](images/search.jpg)<br />
 The front-end begins with a landing page with an introduction to our application. The search page takes the input and determines whether the user is identifying either a location, restaurant, or cuisine and gathers the information for the relevant query from the analyzed database. This analyzed database is then displayed in a list which can be filtered.
 
+![Screen Shot 2021-04-21 at 5 49 03 PM](https://user-images.githubusercontent.com/30973083/115639603-e50ea300-a2c9-11eb-8a7d-8214ae3e7c00.png)
+Individual reviews such as this one are aggregated per restaurant to create the overall ambience, service and food for every restaurant.
+
 ### Overall System Diagram
 
 ![](images/systemDiagram.jpg)<br />
