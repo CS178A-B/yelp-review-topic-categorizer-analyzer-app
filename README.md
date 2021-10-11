@@ -30,6 +30,7 @@ The Yelp Review Topic Categorizer and Analyzer does the following:
 
 ## Usage
 Deployed Application: https://unruffled-poitras-2bf943.netlify.app/
+As of April 2021, undeployed due to recurring costs.
 
 ## How To Run
 
